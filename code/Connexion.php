@@ -9,9 +9,9 @@ class Connexion {
 	}
 
 	public static function initConnexion() {
-		$dsn = 'mysql:dbname=dutinfopw201639;host=database-etudiants.iut.univ-paris8.fr';
-		$user = 'dutinfopw201639';
-		$password = 'qeruneqy';	
+		$dsn = 'mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr';
+		$user = 'dutinfopw201653';
+		$password = 'vyzepuru';	
 
 		self::$bdd = new PDO($dsn, $user, $password);
 	}
