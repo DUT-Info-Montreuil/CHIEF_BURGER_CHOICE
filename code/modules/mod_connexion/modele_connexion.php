@@ -1,7 +1,9 @@
 <?php
-include_once "/home/etudiants/info/bseydi/local_html/MVC3/modules/Connexion.php";
 
-class ModeleConnexion extends Connexion{
+include_once "connexion.php";
+
+class ModeleConnexion extends connexion{
+
 	
 	public function __construct() {
 		self::initConnexion();
@@ -21,6 +23,19 @@ class ModeleConnexion extends Connexion{
 		$sth = self::$bdd->prepare('insert into utilisateurs (id, login, password) values (?,?,?)');
 		$sth->execute(array($id,$login,$password));
         print "inscrit!!!";
+
+		}
+        if ($_POST['login'] != null && $_POST['password'] != null) {
+            $login = $_POST['login'];
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);       
+            $id = $num+1;
+
+            $sth = self::$bdd->prepare('insert into utilisateurs (id, login, password) values (?,?,?)');
+            $sth->execute(array($id,$login,$password));
+            print "inscrit!!!";
+        } else {
+            print "Veuillez remplir tous les champs";
+        }
     }
 	
     public function seConnecter() {

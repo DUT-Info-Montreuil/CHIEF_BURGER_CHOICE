@@ -1,6 +1,6 @@
 <?php
 
-include_once "/home/etudiants/info/bseydi/local_html/ChiefBurgerChoice/vue_generique.php";
+include_once "vue_generique.php";
 
 class VueMenu extends VueGenerique1 {
 

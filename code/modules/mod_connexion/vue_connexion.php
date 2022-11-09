@@ -1,23 +1,13 @@
 <?php
 
-include_once "/home/etudiants/info/bseydi/local_html/MVC3/vue_generique.php";
+include_once "vue_generique.php";
 
 
-class VueConnexion extends VueGenerique{
+class VueConnexion extends VueGenerique1{
 	
 	public function __construct() {
 		parent::__construct();
 	}
-
-	public function affiche_liste($tab) {
-		if (is_array($tab) || is_object($tab)) {
-			foreach ($tab as $value) {
-				foreach ($value as $valuer) {
-					print $valuer."\n";
-				}
-			}
-		}		
-	}	
 
 	public function menu() {		
 			$url1 = "index.php?module=mod_connexion&action=inscription";
@@ -33,10 +23,12 @@ class VueConnexion extends VueGenerique{
 			echo '<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p>';
 		}
 		else {
-        print "inscrivez-vous";
+
         echo'<form action= "index.php?module=mod_connexion&action=sinscrire" method="POST">
+			<p>Entrez un nom d utilisateur</p>
             <input type= "text" name= "login">
-			<input type= "password" name= "password">
+			<p>Entrez un nouveau mot de passe</p>
+			<input type= "password" name= "password"></br>
 			
 			<input type="submit" name="inscrire" /> 
 		</form>';
