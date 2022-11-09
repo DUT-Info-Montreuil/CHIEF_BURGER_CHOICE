@@ -26,11 +26,18 @@ class VueConnexion extends VueGenerique1{
 
         echo'<form action= "index.php?module=mod_connexion&action=sinscrire" method="POST">
 			<p>Entrez un nom d utilisateur</p>
-            <input type= "text" name= "login">
+            <input type= "text" name= "login"></br>
+
+			<p>Entrez une adresse mail</p>
+			<input type= "text" name= "mail"></br>
+
 			<p>Entrez un nouveau mot de passe</p>
 			<input type= "password" name= "password"></br>
+
+			<p>Confirmez votre nouveau mot de passe</p>
+			<input type= "password" name= "confirmPassword"></br>
 			
-			<input type="submit" name="inscrire" /> 
+			<input type="submit" name="inscrire" />
 		</form>';
 		}
     }
