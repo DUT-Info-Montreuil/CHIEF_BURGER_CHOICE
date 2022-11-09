@@ -1,5 +1,5 @@
 <?php
-include_once "/home/etudiants/info/bseydi/local_html/ChiefBurgerChoice/Connexion.php";
+include_once "Connexion.php";
 
 class ModelePlat extends Connexion{
 	
