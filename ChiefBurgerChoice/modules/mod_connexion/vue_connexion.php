@@ -9,16 +9,6 @@ class VueConnexion extends VueGenerique1{
 		parent::__construct();
 	}
 
-	public function affiche_liste($tab) {
-		if (is_array($tab) || is_object($tab)) {
-			foreach ($tab as $value) {
-				foreach ($value as $valuer) {
-					print $valuer."\n";
-				}
-			}
-		}		
-	}	
-
 	public function menu() {		
 			$url1 = "index.php?module=mod_connexion&action=inscription";
 			$url2 = "index.php?module=mod_connexion&action=connecter";			
@@ -36,8 +26,6 @@ class VueConnexion extends VueGenerique1{
         echo'<form action= "index.php?module=mod_connexion&action=sinscrire" method="POST">
 			<p>Entrez un nom d utilisateur</p>
             <input type= "text" name= "login">
-			<p>Entrez votre email</p>
-			<input type= "text" name= "email">
 			<p>Entrez un nouveau mot de passe</p>
 			<input type= "password" name= "password"></br>
 
