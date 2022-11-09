@@ -32,7 +32,10 @@ class ModeleConnexion extends Connexion{
             }
         } else {
             print "Veuillez remplir tous les champs";
-        }    
+        }
+
+		$idCommande = self::$bdd->LastInsertId();
+        print $idCommande;
     }
 	
     public function seConnecter() {
