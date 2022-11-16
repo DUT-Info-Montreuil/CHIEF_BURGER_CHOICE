@@ -1,5 +1,5 @@
 <?php
-include_once "/home/etudiants/info/bseydi/local_html/MVC3/modules/Connexion.php";
+include_once "Connexion.php";
 
 class ModeleConnexion extends Connexion{
 	

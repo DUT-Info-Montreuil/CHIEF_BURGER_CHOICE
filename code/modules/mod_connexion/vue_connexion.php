@@ -1,6 +1,6 @@
 <?php
 
-include_once "/home/etudiants/info/bseydi/local_html/MVC3/vue_generique.php";
+include_once "vue_generique.php";
 
 
 class VueConnexion extends VueGenerique{
