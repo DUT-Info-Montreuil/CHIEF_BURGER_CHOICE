@@ -8,19 +8,46 @@ class ModeleConnexion extends Connexion{
 	}
 
 	public function ajoutUtilisateur() {
-        $sql = 'SELECT * FROM utilisateurs';	
+        $sql = 'SELECT * FROM tableUtilisateurs';	
 		$num = 0;
 		foreach (self::$bdd ->query($sql) as $row) {
 			$num++;
 		}	
-         
-        $id = $num+1;
-		$login = $_POST['login'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+		
+        if ($_POST['login'] != null && $_POST['password'] != null && $_POST['mail'] != null) {
+            if ($_POST['password'] == $_POST['confirmPassword']) {
+                $login = $_POST['login'];       
+                $id = $num+1;
+                $mail = $_POST['mail'];
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $confirmPassword = password_hash($_POST['confirmPassword'], PASSWORD_DEFAULT);
 
-		$sth = self::$bdd->prepare('insert into utilisateurs (id, login, password) values (?,?,?)');
-		$sth->execute(array($id,$login,$password));
-        print "inscrit!!!";
+                $sth = self::$bdd->prepare('insert into tableUtilisateurs (idConnexion, login, mail, mdp) values (?,?,?,?)');
+                $sth->execute(array($id,$login,$mail,$password));
+                print "inscrit!!!";
+            } else {
+                print "les mots de passe ne sont pas identiques";
+            }
+        } else {
+            print "Veuillez remplir tous les champs";
+
+        $dest=$mail;
+        $objet="Bienvenue dans notre restaurant";
+        $message="
+            <font face='arial'>
+            Bonjour ".$login." et bienvenue.n
+            Pour valider votre inscription vous devez écrire le code suivant 
+            </font>
+        ";
+        $entetes="From: chiefburgerchoice@gmail.com";
+        $entetes.="Cc: ".$mail;
+        $entetes.="Content-Type: text/html; charset=iso-8859-1";
+        
+        if(mail($dest,$objet,$message,$entetes))
+            echo "Mail envoyé avec succès.";
+        else
+            echo "Un problème est survenu.";
+        mail($dest , $objet , $message , $entetes);
     }
 	
     public function seConnecter() {
