@@ -21,9 +21,9 @@ class VuePlat extends VueGenerique1{
 
             <select name="boisson">
             	<option value="">--Choisissez une Boisson--</option>
-            	<option value="boisson1">boisson1</option>
-            	<option value="boisson2">boisson2</option>
-           	 	<option value="boisson3">boisson3</option>
+            	<option value="Fanta">Fanta</option>
+            	<option value="Coca">Coca</option>
+           	 	<option value="iceTea>">iceTea</option>
         	</select><br></br>
 
             <input type="submit" name="inserer" />
