@@ -31,42 +31,25 @@
             $sql4->execute(array(':nom' => $_POST['nom_de_mon_burger'], ':prix' => $this->calculerPrixBurger()));
 
             //insertion de l'id_burger dans table de liaison avec lastinsertid
-
+            $dernier_ID = intval(self::$bdd->LastInsertId());
             
             //recup id de l'ingredient cliqué, les stocker ds array
             $choix_ingredients = $_POST['ingredient'];
             foreach ($choix_ingredients as $ingredient){ 
-                //echo($color);
-                //$color."<br />";
                 
-                $sql1= Connexion::$bdd->prepare("SELECT id_ingredient FROM Ingredient WHERE nom_ingredient = ?");
+                $sql1= Connexion::$bdd->prepare('SELECT id_ingredient FROM Ingredient WHERE nom_ingredient = ?');
                 $sql1->execute(array($ingredient));
+                $verifSQL1=$sql1->fetch();
                 
-                $verifSQL1 = $sql1->fetch();
-                echo($verifSQL1['id_ingredient']),"<br />";
-
-                //insertion des id ingredients choisis dans la table de liaison
-
-                foreach(self::$bdd ->QUERY($verifSQL1) as $row){
-                    $sql3 = Connexion::$bdd->prepare("INSERT INTO table_liaison VALUES (/*last_insert_id*/, $row)");
-                }
+                $idIngr = $sql1;
+                
+                //var_dump($verifSQL1);
+                $sql3 = Connexion::$bdd->prepare('INSERT INTO table_liaison VALUES ( ?, ?)');
+                $sql3->execute(array($dernier_ID,$verifSQL1['id_ingredient']));
+                
                 
             }
          
-            /*
-                                
-                
-                */
-
-                /*recup id du burger nouveau burger créé avec lastinsertid
-
-                $last_id = self::$bdd->lastInsertId();
-                echo ($last_id);
-                
-                /*$sql5 = Connexion1::$bdd->prepare('SELECT NOM');
-                $sql5->execute();*/
-
-
             }
 
 
