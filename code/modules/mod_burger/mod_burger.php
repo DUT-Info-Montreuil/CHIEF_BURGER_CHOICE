@@ -3,21 +3,25 @@
 
     class ModBurger {
 
-        private $controleur;
-        private $module;
+        public $controleur;
+        private $action;
 
         public function __construct() {
             $this->controleur = new ContBurger();
-            $this->module = isset($_GET['module']) ? $_GET['module'] : " ";
-            $this->controleur->exec();
+            $this->action = isset($_GET['action']) ? $_GET['action'] : " ";
+
         }
 
-        /*public function exec() {
+        public function exec() {
+            echo('rentre ds exec de mod_burger');
+            echo $this->action;
             switch($this->action) {
-                 
-                case 'ingredient': $this->controleur->ajout(); break;
+                case "creer_burger" : $this->controleur->form_ajout(); break;
+                case "addIngredient" : $this->controleur->ajout(); break;
             }
-        }*/
+            $tamp = $this->controleur->getVue()->getAffichage();	
+		    $this->controleur->getVue()->setTampon($tamp);
+        }
 
     }
 ?>

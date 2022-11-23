@@ -1,28 +1,68 @@
 <?php
     
-    class VueBurger {
+    require_once('vue_generique.php');
+
+
+    class VueBurger extends VueGenerique1{
+        
+        public function __construct() {
+            parent::__construct();
+        }
     
 
         public function form_ajout() {
-            echo '<FORM ACTION="index.php?module=mod_burger&action=addIngredient" METHOD="POST">
-             
-            Merci de choisir vos ingredients:<br><br>
+            echo '<div  class="selectionIngredients">
 
-            PAIN:<br><br>
-
-            <br>
-
-            <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
-            <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
-            <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
-            <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
-            <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
-
-            <INPUT TYPE="TEXT" NAME="nom_de_mon_burger" value="Nom du burger"> 
-
-
-            <INPUT TYPE="SUBMIT" NAME="bouton" value="Valider"> 
-            </FORM>';
+            <FORM ACTION="index.php?module=mod_burger&action=addIngredient" METHOD="POST">
+    
+                <INPUT TYPE="TEXT" NAME="nom_de_mon_burger" value="Nom du burger"> <br><br>
+                    
+                    <p>Merci de choisir vos ingredients:</p><br><br>
+    
+    
+                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
+                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
+                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
+                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
+                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
+    
+                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
+                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
+                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
+                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
+                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
+    
+                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
+                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
+                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
+                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
+                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
+    
+                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
+                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
+                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
+                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
+                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
+    
+                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
+                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
+                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
+                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
+                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
+    
+                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
+                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
+                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
+                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
+                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
+                    
+                    
+    
+    
+                    <INPUT TYPE="SUBMIT" NAME="bouton" value="Valider"> 
+                    </FORM>
+                
+            </div>';
         }
     }
     /*<input type="checkbox" name="ingredient" value="pain 1"> pain 1<br>

@@ -11,6 +11,11 @@ switch($module) {
 		include_once ("modules/".$module."/".$module.".php");
 		$mod = new ModPlat;
 		break;
+	case "mod_burger":
+		include_once ("modules/".$module."/".$module.".php");
+		$mod = new ModBurger;
+		break;
+
 				
 		default:
 			die();

@@ -1,5 +1,5 @@
 <?php
-    require_once('/home/etudiants/info/mghrairi/local_html/CHIEF_BURGER_CHOICE/connexion.php');
+    require_once'Connexion.php';
     
     class ModeleBurger extends Connexion{
 
