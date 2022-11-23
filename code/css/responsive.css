@@ -1,0 +1,316 @@
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+ @media (min-width: 1200px) and (max-width: 1500px) {
+     .right_header_info ul li {
+        font-size: 14px;
+         margin-left: 12px;
+    }
+     .slider_cont h3 {
+        font-size: 36px;
+         line-height: 45px;
+    }
+     .slider_cont p {
+        margin-top: 10px;
+         margin-bottom: 5px
+    }
+     .slider_section {
+        min-height: auto;
+    }
+     .carousel-control-prev {
+         width: 50px;
+         height:50px;
+         left: -20px;
+         top: 95%;
+    }
+     .carousel-control-next {
+         width: 50px;
+         height:50px;
+         right: -20px;
+         top: 95%;
+    }
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+     .dinone {
+        display: none !important;
+    }
+     .slider_section {
+        min-height: auto;
+    }
+     .slider_cont {
+        padding-left: 128px;
+         margin: 0;
+    }
+     .slider_cont h3 {
+        font-size: 36px;
+         line-height: 45px;
+    }
+     .slider_cont p {
+        margin-top: 10px;
+         margin-bottom: 5px
+    }
+     #main_slider .carousel-control-prev, #main_slider .carousel-control-next {
+        width: 54px;
+         height: 54px;
+    }
+     .carousel-control-prev {
+         width: 50px;
+         height:50px;
+         left: -20px;
+         top: 95%;
+    }
+     .carousel-control-next {
+         width: 50px;
+         height:50px;
+         right: -20px;
+         top: 95%;
+    }
+     .about .about_img figure {
+        padding: 155px 0px 0px 60px;
+    }
+     .footer h2 {
+        padding-left: 17px;
+    }
+     .main_form {
+        padding-left: 17px;
+    }
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+     .dinone {
+        display: none !important;
+    }
+     .slider_cont {
+        display: none;
+    }
+     .slider_section {
+        min-height: auto;
+    }
+     .slider_image img {
+        height: 250px;
+    }
+     .slider_image.full.text_align_center img {
+        height: 250px;
+    }
+     #main_slider a.carousel-control-prev {
+        top: 31%;
+    }
+     .carousel-control-prev {
+         left: -2px;
+         width: 50px;
+         height:50px;
+         top: 95%;
+    }
+     .carousel-control-next {
+         right: -2px;
+         width: 50px;
+         height:50px;
+         top: 95%;
+    }
+     .blog {
+         padding-top: 120px;
+    }
+     .about_page .footer {
+        margin-top: 120px;
+    }
+     .about .about_img {
+         margin-top: 30px;
+    }
+     .about .about_img figure {
+        padding: 28px 0px 0px 60px;
+         margin-right: -64px;
+    }
+     .blog .blog_box p {
+         font-size: 15px;
+         line-height: 22px;
+         padding: 0px 10px;
+    }
+     .footer h2 {
+        padding-left: 17px;
+    }
+     .main_form {
+        padding-left: 17px;
+    }
+     .Client .Client_box {
+        padding: 55px 30px;
+    }
+}
+ @media (min-width: 576px) and (max-width: 767px) {
+     .dinone {
+        display: none !important;
+    }
+     .slider_cont {
+        display: none;
+    }
+     .slider_section {
+        min-height: auto;
+    }
+     .slider_image img {
+        height: 250px;
+    }
+     .slider_image.full.text_align_center img {
+        height: 250px;
+    }
+     #main_slider a.carousel-control-prev {
+        top: 31%;
+    }
+     .right_header_info {
+        padding: 0px 0 0;
+    }
+     .right_header_info ul {
+        margin-top: -37px !important;
+    }
+     .carousel-control-prev {
+         left: -2px;
+         width: 50px;
+         height:50px;
+         top: 95%;
+    }
+     .carousel-control-next {
+         right: -2px;
+         width: 50px;
+         height:50px;
+         top: 95%;
+    }
+     .title h2 {
+        font-size: 34px;
+         line-height: 35px;
+    }
+     .about .about_img {
+        margin-top: 30px;
+         margin-right: 65px;
+    }
+     .about .about_img figure {
+        padding: 31px 0px 0px 44px;
+         margin-right: -60px;
+    }
+     .blog {
+         padding-top: 120px;
+    }
+     .about_page .footer {
+        margin-top: 120px;
+    }
+     .mar_bottom {
+        margin-bottom: 30px;
+    }
+     .footer h2 {
+        padding-left: 0px;
+    }
+     .main_form {
+        padding-left: 0px;
+    }
+     .send {
+        margin-bottom: 30px;
+    }
+     ul.lik li a {
+        padding: 0px 21px;
+    }
+}
+ @media (max-width: 575px) {
+     .logo {
+        text-align: center;
+         display: block;
+    }
+     .right_header_info ul {
+         float: inherit;
+         float: inherit;
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         width: 100%;
+    }
+     .right_header_info ul li {
+        padding-top: 10px;
+         margin-left: 10px;
+    }
+     .dinone {
+        display: none !important;
+    }
+     .slider_cont {
+        display: none;
+    }
+     #main_slider a.carousel-control-prev {
+        top: 40%;
+         left: 0px;
+         width: 50px;
+         height: 50px;
+    }
+     #main_slider a.carousel-control-next {
+        top: 60%;
+         left: 0px;
+         width: 50px;
+         height: 50px;
+    }
+     .slider_section {
+        min-height: auto;
+    }
+     .slider_image img {
+        height: 250px;
+    }
+     .slider_image.full.text_align_center img {
+        height: 250px;
+    }
+     .product_blog_img {
+        text-align: center;
+    }
+     .carousel-control-prev {
+         left: -2px;
+         width: 50px;
+         height:50px;
+         top: 95%;
+    }
+     .carousel-control-next {
+         right: -2px;
+         width: 50px;
+         height:50px;
+         top: 95%;
+    }
+     .title h2 {
+        font-size: 36px;
+         line-height: 38px;
+    }
+     .blog {
+        padding-top: 120px;
+    }
+     .about_page .footer {
+        margin-top: 120px;
+    }
+     .about .about_img figure {
+        padding: 32px 0px 0px 32px;
+         margin-right: -30px;
+    }
+     .about .about_img {
+        margin-top: 30px;
+         margin-right: 30px;
+    }
+     .about .about_box {
+        padding: 55px 20px;
+    }
+     .Client .Client_box {
+        padding: 65px 25px;
+    }
+     .mar_bottom {
+        margin-bottom: 30px;
+    }
+     .footer h2 {
+        padding-left: 0px;
+         font-size: 28px;
+    }
+     .main_form {
+        padding-left: 0px;
+    }
+     .send {
+        margin-bottom: 30px;
+    }
+     ul.lik li a {
+        padding: 0px 13px;
+    }
+     .newtetter .tetter {
+        width: 64%;
+    }
+     .submit {
+        width: 102px;
+         padding: 9px 18px;
+    }
+     .yellow_bg {
+        margin-top: 163px;
+    }
+}
+ 

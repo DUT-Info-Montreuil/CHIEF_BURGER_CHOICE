@@ -11,7 +11,12 @@
     
 
         public function form_ajout() {
-            echo '<div  class="selectionIngredients">
+            echo '<div class="blog">
+            <div class="imageBurger">
+            <img src="images/burger21.jpg" alt="logo" />
+            </div>
+            
+            <div  class="selectionIngredients">
 
             <FORM ACTION="index.php?module=mod_burger&action=addIngredient" METHOD="POST">
     
