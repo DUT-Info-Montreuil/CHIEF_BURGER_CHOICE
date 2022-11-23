@@ -10,6 +10,7 @@
      font-family: 'poppins', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
+		margin: auto;
 }
  a {
      color: #1f1f1f;
@@ -932,4 +933,34 @@
      color: #fff;
      font-weight: 500;
 }
- 
+
+.formConnexion {
+	margin: auto;
+	margin-top: 200px;
+    margin-left: 800px;
+
+}
+
+.formInscription {
+    margin: auto;
+    margin-top: 200px;
+    margin-left: 800px;
+}
+
+.formDejaIns {
+    margin: auto;
+    margin-top: 200px;
+    margin-left: 800px;
+}
+
+.formDejaCo {
+    margin: auto;
+    margin-top: 200px;
+    margin-left: 800px;
+}
+
+.formDeconnexion {
+    margin: auto;
+    margin-top: 200px;
+    margin-left: 800px;
+}
