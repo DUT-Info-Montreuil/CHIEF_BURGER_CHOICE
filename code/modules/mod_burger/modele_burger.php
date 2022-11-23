@@ -53,10 +53,7 @@
             }
 
 
-            public function insertion_liaison(){
-                
-            }
-
+            
 
     }
 ?>
