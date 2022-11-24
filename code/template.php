@@ -32,9 +32,7 @@
 
 <body class="main-layout">
   <!-- loader  -->
-  <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="" /></div>
-    </div>
+ 
 
     <div class="wrapper">
     <!-- end loader -->
@@ -56,7 +54,7 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="recipe.html">Recipe</a>
+                        <a href="index.php?module=mod_plat&action=choix_plat">Menu</a>
                     </li>
                     <li>
                         <a href="blog.html">Blog</a>
@@ -86,8 +84,7 @@
                                 <li class="dinone">Contactez-nous : <img style="margin-right: 15px;margin-left: 15px;" src="images/phone_icon.png" alt="#"><a href="#">0606060606</a></li>
                                 <li class="dinone"><img style="margin-right: 15px;" src="images/mail_icon.png" alt="#"><a href="#">ChiefBurgerChoice@gmail.com</a></li>
                                 <li class="dinone"><img style="margin-right: 15px;height: 21px;position: relative;top: -2px;" src="images/location_icon.png" alt="#"><a href="#">93100 Montreuil, France</a></li>
-                                <li class="button_user"><a class="button active" href="index.php?module=mod_connexion&action=connecter">Login</a><a class="button" href="index.php?module=mod_connexion&action=inscription">Register</a></li>
-                                <li><img style="margin-right: 15px;" src="images/search_icon.png" alt="#"></li>
+                                <li class="button_user"><a class="button active" href="index.php?module=mod_connexion&action=connecter">Connexion</a><a class="button" href="index.php?module=mod_connexion&action=inscription">Inscription</a></li>
                                 <li>
                                     <button type="button" id="sidebarCollapse">
                                         <img src="images/menu_icon.png" alt="#">
@@ -101,10 +98,10 @@
         </div>
     </header>
 	
-	<main>	
-		<?php							
-			echo $mod->controleur->getVue()->getTampon();
-		?>
+	<main>
+        <?php							
+            echo $mod->controleur->getVue()->getTampon();
+        ?>
 	</main>
 
   <div class="footer">
@@ -124,15 +121,6 @@
                             <li> <a href="blog.html">Blog</a></li>
                             <li> <a href="contact.html">Contact us</a></li>
                         </ul>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="new">
-                            <h3>Newsletter</h3>
-                            <form class="newtetter">
-                                <input class="tetter" placeholder="Your email" type="text" name="Your email">
-                                <button class="submit">Subscribe</button>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>

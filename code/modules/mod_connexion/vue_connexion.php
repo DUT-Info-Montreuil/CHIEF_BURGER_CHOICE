@@ -19,30 +19,29 @@ class VueConnexion extends VueGenerique1{
 
     public function form_inscription() {
 		if(isset($_SESSION['log'])) {
-			echo "Vous êtes déjà connecté sous : " . $_SESSION['log'];
-			echo '<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p>';
+			
 
-			echo '<div class="formDejaIns">
-
-				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p>
+			echo '<div class="formInscription">
+				<p>Vous êtes déjà connecté sous : </p></br>
+				</br>
+				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
+				</br>
+				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
 			</div>';
 		}
 		else {
 
         echo'<div class="formInscription">
 				<form action= "index.php?module=mod_connexion&action=sinscrire" method="POST">
-					<p>Entrez un nom d utilisateur</p>
-					<input type= "text" name= "login"></br>
-
-					<p>Entrez une adresse mail</p>
-					<input type= "text" name= "mail"></br>
-
-					<p>Entrez un nouveau mot de passe</p>
-					<input type= "password" name= "password"></br>
-
-					<p>Confirmez votre nouveau mot de passe</p>
-					<input type= "password" name= "confirmPassword"></br>
-					
+		
+					<input type= "text" placeholder="Entrez un nom d\'utilisateur" name= "login"></br>
+					</br>
+					<input type= "text" placeholder="Entrez une adresse mail" name= "mail"></br>
+					</br>
+					<input type= "password" placeholder="Entrez un nouveau mot de passe" name= "password"></br>
+					</br>
+					<input type= "password" placeholder="Confirmation du mot de passe" name= "confirmPassword"></br>
+					</br>
 					<input type="submit" name="inscrire" />
 				</form>
 		</div>';
@@ -53,33 +52,36 @@ class VueConnexion extends VueGenerique1{
 
 		if(isset($_SESSION['log'])) {
 			echo "Vous êtes déjà connecté sous : " . $_SESSION['log'];
-			echo '<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p>';
+			
 
-			echo '<div class="formDejaCo">
-
-				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p>
+			echo '<div class="formConnexion">
+				<p>Vous êtes déjà connecté</p></br>
+				</br>
+				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
+				</br>
+				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
 			</div>';
 		}
 		else {
         print "connectez-vous";
-
-        echo'<div class="formConnexion">
-				<form action= "index.php?module=mod_connexion&action=connexion" method="POST">
-						<p>Entrez votre nom d`utilisateur</p>
-						<input type= "text" name= "login"></br>
-
-						<p>Entrez votre mot de passe</p>
-						<input type= "password" name= "password"></br>
-					
-					<input type="submit" name="seConnecter" /> 
-				</form>
-		</div>';
+			
+			echo'<div class="formConnexion">
+					<form action= "index.php?module=mod_connexion&action=connexion" method="POST">
+							<p>Connectez-vous</p>
+							</br>
+							<input type= "text" placeholder="nom d\'utilisateur" name= "login"></br>
+							</br>
+							<input type= "password" placeholder="mot de passe"name= "password"></br>
+							</br>
+							<input type="submit" name="seConnecter" /> 
+					</form>
+			</div>';
 		}
     }
 
 	public function form_deconnexion() {
 		print "deconnectez-vous";
-		echo'<div class="formDeconnexion">		
+		echo'<div class="formConnexion">		
 			<form action= "index.php?module=mod_connexion&action=deconnexion" method="POST">
 				<input type="submit" name="seDeconnecter" />
 			</form>
