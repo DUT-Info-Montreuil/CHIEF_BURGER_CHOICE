@@ -33,7 +33,7 @@ class VueConnexion extends VueGenerique1{
 
         echo'<div class="formInscription">
 				<form action= "index.php?module=mod_connexion&action=sinscrire" method="POST">
-		
+					<p>Inscrivez-vous</p></br>
 					<input type= "text" placeholder="Entrez un nom d\'utilisateur" name= "login"></br>
 					</br>
 					<input type= "text" placeholder="Entrez une adresse mail" name= "mail"></br>
@@ -62,9 +62,7 @@ class VueConnexion extends VueGenerique1{
 				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
 			</div>';
 		}
-		else {
-        print "connectez-vous";
-			
+		else {	
 			echo'<div class="formConnexion">
 					<form action= "index.php?module=mod_connexion&action=connexion" method="POST">
 							<p>Connectez-vous</p>

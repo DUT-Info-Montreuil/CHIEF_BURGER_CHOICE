@@ -12,6 +12,7 @@ class VuePlat extends VueGenerique1{
 
         echo '<div class="formPlat">
 			<p>Plaaaaaaaaaaaaaaaaaaaaaaaaaaaaat</p>
+				
 			<form action= "index.php?module=mod_plat&action=inserer_plat" method="POST">
 
 				<select name="burger">
@@ -32,6 +33,19 @@ class VuePlat extends VueGenerique1{
 			</form>
 		</div>';
     }
+
+	public function afficher_menus($ligne) {
+		echo '<div class="formPlat">
+		<p>Tous les plats</p>';
+
+		foreach ($ligne as $row) {
+			echo $row['nom'];
+			echo '<img src=';$row['image'];echo'alt="#">';	
+		}
+
+		echo'</div>';
+
+	}
 }
 
 ?>
