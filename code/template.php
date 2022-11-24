@@ -50,16 +50,16 @@
                 <ul class="list-unstyled components">
 
                     <li class="active">
-                        <a href="index.html">Home</a>
+                        <a href="home.html">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="carte.html">Notre Carte</a>
                     </li>
                     <li>
                         <a href="recipe.html">Recipe</a>
                     </li>
                     <li>
-                        <a href="blog.html">Blog</a>
+                        <a href="blog.html">eeeee</a>
                     </li>
                     <li>
                         <a href="index.php?module=mod_burger&action=creer_burger">Creer burger</a>
@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="full">
-                        <a class="logo" href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        <a class="logo" href="index.php"><img src="images/logo.png" alt="#" /></a>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -113,15 +113,15 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="footer_logo">
-                          <a href="index.html"><img src="images/logo1.jpg" alt="logo" /></a>
+                          <a href="index.php"><img src="images/logo1.jpg" alt="logo" /></a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <ul class="lik">
-                            <li class="active"> <a href="index.html">Home</a></li>
+                            <li class="active"> <a href="index.php">Home</a></li>
                             <li> <a href="about.html">About</a></li>
                             <li> <a href="recipe.html">Recipe</a></li>
-                            <li> <a href="blog.html">Blog</a></li>
+                            <li><a href="index.php?module=mod_burger&action=creer_burger">Creer burger</a></li>
                             <li> <a href="contact.html">Contact us</a></li>
                         </ul>
                     </div>

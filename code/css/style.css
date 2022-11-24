@@ -416,13 +416,36 @@
     border-top: solid rgba(255,255,255,.1) 1px;
     box-shadow: inset 0 10px 30px -16px #000;
 }
- .ourheading h2 {
-    font-size: 45px;
-     font-weight: 500;
-     line-height: 40px;
-     color: #fff;
-     padding-bottom: 38px;
+
+.menu_section {
+     background: #212020;
+     margin-top: 0;
+     padding: 60px 0px 50px 0px;
+     border-top: solid rgba(255,255,255,.1) 1px;
+     box-shadow: inset 0 10px 30px -16px #000
 }
+
+
+.client_menu_section {
+     background: #212020;
+     margin-top: 0;
+     padding: 60px 0px 50px 0px;
+     border-top: solid rgba(255,255,255,.1) 1px;
+     box-shadow: inset 0 10px 30px -16px #000
+}
+
+
+.ourheading h2 {
+     font-size: 45px;
+     font-weight: 500;
+     line-height: 170px;
+     color: #fff;
+     padding-top: 80px;
+     padding-bottom: 38px ;
+     
+
+}
+
  .product_blog_cont {
      text-align: center;
      padding-top: 20px;
