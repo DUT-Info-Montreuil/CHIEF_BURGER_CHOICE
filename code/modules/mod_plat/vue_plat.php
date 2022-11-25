@@ -39,8 +39,10 @@ class VuePlat extends VueGenerique1{
 		<p>Tous les plats</p>';
 
 		foreach ($ligne as $row) {
+			
 			echo $row['nom'];
-			echo '<img src=';$row['image'];echo'alt="#">';	
+			echo '<img src=';
+			echo $row['image'];echo'alt="#">';	
 		}
 
 		echo'</div>';
