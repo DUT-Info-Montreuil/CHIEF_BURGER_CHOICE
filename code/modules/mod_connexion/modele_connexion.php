@@ -22,6 +22,22 @@ class ModeleConnexion extends Connexion{
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $confirmPassword = password_hash($_POST['confirmPassword'], PASSWORD_DEFAULT);
 
+                $dest=$mail;
+                $objet="Bienvenue dans notre restaurant";
+                $message="
+                    <font face='arial'>
+                    Bonjour ".$login." et bienvenue.n
+                    Pour valider votre inscription vous devez écrire le code suivant 
+                    </font>
+                ";
+                $entetes="Content-Type: text/html; charset=iso-8859-1";
+                $entetes.="From: chiefburgerchoice@gmail.com";
+                
+                if(mail($dest,$objet,$message,$entetes))
+                    echo "Mail envoyé avec succès.";
+                else
+                    echo "Un problème est survenu.";
+
                 $sth = self::$bdd->prepare('insert into tableUtilisateurs (idConnexion, login, mail, mdp) values (?,?,?,?)');
                 $sth->execute(array($id,$login,$mail,$password));
                 print "inscrit!!!";
@@ -30,24 +46,7 @@ class ModeleConnexion extends Connexion{
             }
         } else {
             print "Veuillez remplir tous les champs";
-
-        $dest=$mail;
-        $objet="Bienvenue dans notre restaurant";
-        $message="
-            <font face='arial'>
-            Bonjour ".$login." et bienvenue.n
-            Pour valider votre inscription vous devez écrire le code suivant 
-            </font>
-        ";
-        $entetes="From: chiefburgerchoice@gmail.com";
-        $entetes.="Cc: ".$mail;
-        $entetes.="Content-Type: text/html; charset=iso-8859-1";
-        
-        if(mail($dest,$objet,$message,$entetes))
-            echo "Mail envoyé avec succès.";
-        else
-            echo "Un problème est survenu.";
-        mail($dest , $objet , $message , $entetes);
+        }
     }
 	
     public function seConnecter() {
@@ -70,5 +69,6 @@ class ModeleConnexion extends Connexion{
             session_destroy();
         }        
     }
+    
 }
 ?>

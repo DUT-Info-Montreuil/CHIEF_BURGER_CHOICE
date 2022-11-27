@@ -1,8 +1,53 @@
+<?php
+session_start();
+$dsn = 'mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr';
+$user = 'dutinfopw201653';
+$password = 'vyzepuru';	
 
+$bdd = new PDO($dsn, $user, $password);
+if(isset($_POST['inscription'])){
+    if(!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['mdp'])){
+        $cle = rand(100000, 300000);
+        $nom=$_POST['nom'];
+        $email=$_POST['email'];
+        $password=$_POST['mdp'];
+        $inserer_user=$bdd->prepare('INSERT INTO test_mail(nom, email, mdp, cle, confirme) VALUES (?, ?, ?, ?, ?)');
+        $inserer_user->execute(array($nom, $email, $mdp, $cle, 0));
+
+        $recup_user=$bdd->prepare('SELECT * FROM test_mail WHERE email=?');
+        $recup_user->execute(array($email));
+        if($recup_user->rowCount()>0){
+            $user_infos = $recup_user->fetch();
+            $_SESSION['id'] = $user_infos['id'];
+
+            $dest=$email;
+            $objet="Bienvenue dans notre restaurant";
+            $message="
+                <font face='arial'>
+                Bonjour ".$login." et bienvenue.n
+                Pour valider votre inscription vous devez écrire le code suivant 
+                </font>
+            ";
+            $entetes="Content-Type: text/html; charset=iso-8859-1";
+            $entetes.="From: chiefburgerchoice@gmail.com";
+                
+            if(mail($dest,$objet,$message,$entetes))
+                echo "Mail envoyé avec succès.";
+            else
+                echo "Un problème est survenu.";
+        }
+    }else{
+        echo "Veillez à bien remplir tous les champs";
+    }
+}
+
+?>
+<!DOCTYPE html>
+<html>
 <form method="POST" action="">
     <input type="text" name="nom" placeholder="Entrez votre nom" required>
     <input type="email" name="email" placeholder="Entrez votre adresse email" required>
     <input type="password" name="mdp" placeholder="Entrez votre mot de passe" required>
     <input type="submit" name="inscription" placeholder="Inscription" required>
 </form>
-
+</html>

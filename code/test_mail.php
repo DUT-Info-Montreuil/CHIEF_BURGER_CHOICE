@@ -1,5 +1,5 @@
 <?php
-$dest="testchiefbc@gmail.com";
+$dest="noufnouf788@gmail.com";
 $objet="Bienvenue dans notre restaurant";
 $message="
     <font face='arial'>
