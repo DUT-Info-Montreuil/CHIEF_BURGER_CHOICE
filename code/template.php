@@ -16,7 +16,7 @@
 	
 	<main>	
 		<?php							
-			echo $mod->controleur->getVue()->getTampon();
+			echo $mod->$controleur->getVue()->getTampon();
 		?>
 	</main>
 
