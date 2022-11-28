@@ -1,16 +1,13 @@
 <?php
 session_start();
-$dsn = 'mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr';
-$user = 'dutinfopw201653';
-$password = 'vyzepuru';	
 
-$bdd = new PDO($dsn, $user, $password);
+$bdd = new PDO('mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr', 'dutinfopw201653', 'vyzepuru');
 if(isset($_POST['inscription'])){
     if(!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['mdp'])){
         $cle = rand(100000, 300000);
         $nom=$_POST['nom'];
         $email=$_POST['email'];
-        $password=$_POST['mdp'];
+        $mdp=$_POST['mdp'];
         $inserer_user=$bdd->prepare('INSERT INTO test_mail(nom, email, mdp, cle, confirme) VALUES (?, ?, ?, ?, ?)');
         $inserer_user->execute(array($nom, $email, $mdp, $cle, 0));
 
@@ -24,8 +21,9 @@ if(isset($_POST['inscription'])){
             $objet="Bienvenue dans notre restaurant";
             $message="
                 <font face='arial'>
-                Bonjour ".$login." et bienvenue.n
+                Bonjour ".$nom." et bienvenue.n
                 Pour valider votre inscription vous devez écrire le code suivant 
+                http://localhost/CHIEF_BURGER_CHOICE/code/verif.php?id".$_SESSION['id']."=&cle=".$cle."
                 </font>
             ";
             $entetes="Content-Type: text/html; charset=iso-8859-1";
