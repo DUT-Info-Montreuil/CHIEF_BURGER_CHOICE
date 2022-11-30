@@ -36,6 +36,10 @@ class ContPlat{
 			$this->modele->inserer_plat();
 		}
 	}
+
+	public function affichePlat() {
+		$this->modele->affichePlat();
+	}
 	
 
 }

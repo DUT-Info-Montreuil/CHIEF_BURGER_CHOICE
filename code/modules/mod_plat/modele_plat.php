@@ -49,5 +49,9 @@ class ModelePlat extends Connexion{
 
 		return $row;		
 	}
+
+	public function affichePlat() {
+		echo $_GET['idPlat'];
+	}
 }
 ?>

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- awesome fontfamily -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -129,7 +130,7 @@
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>© 2022 All Rights Reserved. Design by<a href="https://html.design/"> Marwan,Naoufel et Boulaye</a></p>
+                    <p>© 2022 Tous les droits réservé. Conçu par<a href="https://html.design/"> Marwan,Naoufel et Boulaye</a></p>
                 </div>
             </div>
         </div>
@@ -140,9 +141,10 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    
-     <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+   <script src="js/jquery-3.0.0.min.js"></script>
    <script type="text/javascript">
         $(document).ready(function() {
             $("#sidebar").mCustomScrollbar({
@@ -196,10 +198,6 @@
            })
          })
       </script>
-
-
-
-
 
 </body>
 </html>

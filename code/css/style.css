@@ -964,6 +964,10 @@
     margin-right: auto;
 }
 
-
-
-
+.select-filtre {
+    background-color: #15cfee;
+    margin-top: 0px;
+    margin-left: 50px;
+    margin-right: 1600px;
+    padding-bottom: 100px;
+}

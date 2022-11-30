@@ -26,7 +26,33 @@ class VueConnexion extends VueGenerique1{
 			</div>';
 		}
 		else {
+			echo'<div class="formConnexion">
+					<form action= "index.php?module=mod_connexion&action=connexion" method="POST">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Identifiant</label>
+							<input type="text" class="form-control" placeholder="Enter votre nom d\'utilisateur" name= "login">
+						</div>
 
+						<div class="form-group">
+							<label for="exampleInputPassword1">Email</label>
+							<input type="password" class="form-control" placeholder="Entrez votre email" name= "mail">
+							<small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre e-mail avec quelqu\'un d\'autre.</small>
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputPassword1">Mot de passe</label>
+							<input type="password" class="form-control" placeholder="Entrez votre mot de passe" name= "password">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputPassword1">Confirmation mot de passe</label>
+							<input type="password" class="form-control" placeholder="Confirmez votre mot de passe" name= "confirmPassword">
+						</div>
+
+						<button type="submit" class="btn btn-primary" name="seConnecter">Submit</button>
+					</form>
+				</div>';
+			
 
         /*echo'<div class="formInscription">
 				<form action= "index.php?module=mod_connexion&action=sinscrire" method="POST">
@@ -59,7 +85,6 @@ class VueConnexion extends VueGenerique1{
 						<div class="form-group">
 							<label for="exampleInputEmail1">Identifiant</label>
 							<input type="text" class="form-control" placeholder="Enter votre nom d\'utilisateur" name= "login">
-							<small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Mot de passe</label>
