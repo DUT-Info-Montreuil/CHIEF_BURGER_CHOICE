@@ -2,13 +2,11 @@
 $dest="noufnouf788@gmail.com";
 $objet="Bienvenue dans notre restaurant";
 $message="
-    <font face='arial'>
-    Bonjour et bienvenue.n
-    Pour valider votre inscription vous devez écrire le code suivant 
-    </font>
+    Bonjour et bienvenue\n
+    Voici le code pour valider votre inscription
 ";
-$entetes="Content-Type: text/html; charset=iso-8859-1";
-$entetes.="From: chiefburgerchoice@gmail.com";
+$entetes="Content-Type: text/plain; charset=utf-8\r\n";
+$entetes.="From: chiefburgerchoice@gmail.com\r\n";
 
 if(mail($dest,$objet,$message,$entetes))
     echo "Mail envoyé avec succès.";
