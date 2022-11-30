@@ -46,10 +46,21 @@
                 //var_dump($verifSQL1);
                 $sql3 = Connexion::$bdd->prepare('INSERT INTO table_liaison VALUES ( ?, ?)');
                 $sql3->execute(array($dernier_ID,$verifSQL1['id_ingredient']));
-                
+                                $sql1->execute(array($ingredient));
                 
             }
          
+            }
+
+
+            public function liker_burger(){
+
+                //like disponible sur la page du burger
+                
+                //recup de l'id du client qui like
+                $id_like = $_SESSION['log'];
+                $sql_recup_id = Connexion::$bdd->prepare('SELECT * FROM utilisateurs WHERE nom = ?');
+                $sql_recup_id->execute(array($id_like));
             }
 
 
