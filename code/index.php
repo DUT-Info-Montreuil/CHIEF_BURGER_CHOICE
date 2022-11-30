@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 
@@ -30,5 +31,3 @@ require_once "template.php";
 	
 
 	
-
-

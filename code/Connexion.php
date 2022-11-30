@@ -13,6 +13,7 @@ class Connexion {
 		$user = 'dutinfopw201653';
 		$password = 'vyzepuru';	
 
+
 		self::$bdd = new PDO($dsn, $user, $password);
 	}
 }
