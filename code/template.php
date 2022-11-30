@@ -54,7 +54,7 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="index.php?module=mod_plat&action=choix_plat">Menu</a>
+                        <a href="index.php?module=mod_plat&action=afficher_menus">Menu</a>
                     </li>
                     <li>
                         <a href="blog.html">Blog</a>
@@ -69,7 +69,7 @@
 
     <div id="content">
      <!----------------------------- header -------------------------->
-<header>
+    <header>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">
@@ -98,13 +98,16 @@
         </div>
     </header>
 	
-	<main>
+
+
         <?php							
             echo $mod->controleur->getVue()->getTampon();
         ?>
-	</main>
 
-  <div class="footer">
+
+
+    <footer>
+        <div class="footer">
             <div class="container-fluid">
                 
                 <div class="row">
@@ -131,6 +134,7 @@
             </div>
         </div>
     </footer>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

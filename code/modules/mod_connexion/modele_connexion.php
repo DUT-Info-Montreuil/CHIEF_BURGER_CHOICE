@@ -11,7 +11,7 @@ class ModeleConnexion extends Connexion{
 
 	public function ajoutUtilisateur() {
 
-        if ($_POST['login'] != null && $_POST['password'] != null && $_POST['mail'] != null) {
+        if ($_POST['login'] != null || $_POST['password'] != null || $_POST['mail'] != null) {
             if ($_POST['password'] == $_POST['confirmPassword']) {
                 $login = $_POST['login'];       
                 $mail = $_POST['mail'];

@@ -935,20 +935,21 @@
 }
 
 .formConnexion {
-	margin: auto;
-	margin-top: 200px;
-    margin-left: 800px;
+	margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
 .formInscription {
-    margin: auto;
-    margin-top: 200px;
-    margin-left: 800px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .formPlat {
     margin: auto;
-    margin-top: 200px;
-    margin-left: 800px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
 }

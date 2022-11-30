@@ -19,12 +19,8 @@ class VueConnexion extends VueGenerique1{
 
     public function form_inscription() {
 		if(isset($_SESSION['log'])) {
-			
-
 			echo '<div class="formInscription">
-				<p>Vous êtes déjà connecté sous : </p></br>
-				</br>
-				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
+				<p>Vous êtes déjà connecté sous : ';echo $_SESSION['log'];echo'</p></br>
 				</br>
 				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
 			</div>';
@@ -49,15 +45,9 @@ class VueConnexion extends VueGenerique1{
     }
 
     public function form_connexion() {
-
 		if(isset($_SESSION['log'])) {
-			echo "Vous êtes déjà connecté sous : " . $_SESSION['log'];
-			
-
 			echo '<div class="formConnexion">
-				<p>Vous êtes déjà connecté</p></br>
-				</br>
-				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
+				<p>Vous êtes déjà connecté sous : ';echo $_SESSION['log'];echo'</p></br>
 				</br>
 				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
 			</div>';

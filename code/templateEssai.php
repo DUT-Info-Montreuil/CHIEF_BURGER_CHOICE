@@ -8,6 +8,7 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
+        <link rel="stylesheet" href="css/styleTest.css">
     </head>
 
     <body>
@@ -15,13 +16,23 @@
             <li class="button_user">
                 <a class="button active" href="index.php?module=mod_connexion&action=connecter">Connexion</a>
                 <a class="button" href="index.php?module=mod_connexion&action=inscription">Inscription</a>
+                <a class="button" href="index.php?module=mod_plat&action=choix_plat">creer plat</a>
+                <a class="button" href="index.php?module=mod_plat&action=afficher_menus">choix plat</a>
             </li>
         </header>
-        <main>
+      
             <?php							
-                echo $mod->controleur->getVue()->getTampon();
+               // echo $mod->controleur->getVue()->getTampon();
+              echo'
+               <p>
+               Texte visible
+             </p>
+             <p class="secret">
+               Texte invisible
+             </p>
+             ';
             ?>
-        </main>
+       
     </body>
 
     <footer>

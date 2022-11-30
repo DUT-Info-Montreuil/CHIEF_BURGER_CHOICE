@@ -35,17 +35,89 @@ class VuePlat extends VueGenerique1{
     }
 
 	public function afficher_menus($ligne) {
-		echo '<div class="formPlat">
-		<p>Tous les plats</p>';
+		echo '
+			<div class="yellow_bg">
+				<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+							<div class="title">
+								<h2>Nos recettes</h2>
+								
+							</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- section -->
+			<section class="resip_section">
+				<div class="container">
+					<div class="row">
+					   
+						<div class="col-md-12">
+					<div class="owl-carousel owl-theme">';
+						foreach ($ligne as $row) {
+							echo'
+								<div class="item">
+									<div class="product_blog_img">
+										<img src=';echo $row['image'];echo'alt="#" />
+									</div>
+									<div class="product_blog_cont">
+										<h3>';echo $row['nom'];echo'</h3>
+										<h4><span class="theme_color">$</span>';echo $row['prix'];echo'</h4>
+									</div>
+								</div>';
+						}		
+					echo '</div>
+				</div>
+					</div>
+				</div>
+			</section>
 
-		foreach ($ligne as $row) {
-			echo $row['nom'];
-			echo '<img src=';$row['image'];echo'alt="#">';	
-		}
 
-		echo'</div>';
+			<div class="yellow_bg">
+				<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+							<div class="title">
+								<h2>Les recettes de nos clients</h2>
+								
+							</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- section -->
+			<section class="resip_section">
+				<div class="container">
+					<div class="row">
+					   
+						<div class="col-md-12">
+					<div class="owl-carousel owl-theme">';
+						foreach ($ligne as $row) {
+							echo'
+								<div class="item">
+									<div class="product_blog_img">
+										<img src=';echo $row['image'];echo'alt="#" />
+									</div>
+									<div class="product_blog_cont">
+										<h3>';echo $row['nom'];echo'</h3>
+										<h4><span class="theme_color">$</span>';echo $row['prix'];echo'</h4>
+									</div>
+								</div>';
+						}		
+					echo '</div>
+				</div>
+					</div>
+				</div>
+			</section>
+		
+			';
+	}
+
+	public function afm2() {
 
 	}
+	
 }
 
 ?>

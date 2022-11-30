@@ -29,6 +29,14 @@ class ContPlat{
 
 	public function getVue() {
 		return $this->vue;
-	}	
+	}
+	
+	public function commande_plat() {
+		if (isset($_POST['commande'])) {
+			$this->modele->inserer_plat();
+		}
+	}
+	
+
 }
 ?>
