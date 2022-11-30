@@ -59,11 +59,40 @@
                 
                 //recup de l'id du client qui like
                 $id_like = $_SESSION['log'];
-                $sql_recup_id = Connexion::$bdd->prepare('SELECT * FROM utilisateurs WHERE nom = ?');
+                $sql_recup_id = Connexion::$bdd->prepare('SELECT * FROM Utilisateurs WHERE nom = ?');
                 $sql_recup_id->execute(array($id_like));
 
                 //recup de l'id du burger cliqué
-                //$id_burger_cliqué = 
+                $id_burger_cliqué = $_GET['idPlat'];
+                $sql_recup_id_burger = Connexion::$bdd->prepare('SELECT * FROM Burger WHERE id = ?');
+                $sql_recup_id_burger->execute(array($id_burger_cliqué));
+
+                //insertions des 2 dans la table_like
+                $insertion_like = Connexion::$bdd->prepare('INSERT INTO j_aime VALUES ( ?, ?)');
+                $insertion_like->execute(array($sql_recup_id,$sql_recup_id_burger));
+ 
+
+            }
+
+
+            public function dislike(){
+
+                //dislike disponible sur la page du burger
+                
+                //recup de l'id du client dislike
+                $id_like = $_SESSION['log'];
+                $sql_recup_id = Connexion::$bdd->prepare('SELECT * FROM Utilisateurs WHERE nom = ?');
+                $sql_recup_id->execute(array($id_like));
+
+                //recup de l'id du burger cliqué
+                $id_burger_cliqué = $_GET['idPlat'];
+                $sql_recup_id_burger = Connexion::$bdd->prepare('SELECT * FROM Burger WHERE id = ?');
+                $sql_recup_id_burger->execute(array($id_burger_cliqué));
+
+                //insertions des 2 dans la table_like
+                $insertion_like = Connexion::$bdd->prepare('INSERT INTO j_aime VALUES ( ?, ?)');
+                $insertion_like->execute(array($sql_recup_id,$sql_recup_id_burger));
+ 
 
             }
 
