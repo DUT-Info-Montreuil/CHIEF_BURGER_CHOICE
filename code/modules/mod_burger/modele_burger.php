@@ -61,6 +61,10 @@
                 $id_like = $_SESSION['log'];
                 $sql_recup_id = Connexion::$bdd->prepare('SELECT * FROM utilisateurs WHERE nom = ?');
                 $sql_recup_id->execute(array($id_like));
+
+                //recup de l'id du burger cliqué
+                //$id_burger_cliqué = 
+
             }
 
 
