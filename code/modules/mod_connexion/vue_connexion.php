@@ -27,7 +27,8 @@ class VueConnexion extends VueGenerique1{
 		}
 		else {
 
-        echo'<div class="formInscription">
+
+        /*echo'<div class="formInscription">
 				<form action= "index.php?module=mod_connexion&action=sinscrire" method="POST">
 					<p>Inscrivez-vous</p></br>
 					<input type= "text" placeholder="Entrez un nom d\'utilisateur" name= "login"></br>
@@ -40,7 +41,7 @@ class VueConnexion extends VueGenerique1{
 					</br>
 					<input type="submit" name="inscrire" />
 				</form>
-		</div>';
+		</div>';*/
 		}
     }
 
@@ -55,15 +56,22 @@ class VueConnexion extends VueGenerique1{
 		else {	
 			echo'<div class="formConnexion">
 					<form action= "index.php?module=mod_connexion&action=connexion" method="POST">
-							<p>Connectez-vous</p>
-							</br>
-							<input type= "text" placeholder="nom d\'utilisateur" name= "login"></br>
-							</br>
-							<input type= "password" placeholder="mot de passe"name= "password"></br>
-							</br>
-							<input type="submit" name="seConnecter" /> 
+						<div class="form-group">
+							<label for="exampleInputEmail1">Identifiant</label>
+							<input type="text" class="form-control" placeholder="Enter votre nom d\'utilisateur" name= "login">
+							<small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Mot de passe</label>
+							<input type="password" class="form-control" placeholder="Entrez votre mot de passe" name= "password">
+						</div>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<button type="submit" class="btn btn-primary" name="seConnecter">Submit</button>
 					</form>
-			</div>';
+				</div>';
 		}
     }
 

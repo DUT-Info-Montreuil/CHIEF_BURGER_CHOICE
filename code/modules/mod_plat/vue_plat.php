@@ -51,15 +51,25 @@ class VuePlat extends VueGenerique1{
 			<!-- section -->
 			<section class="resip_section">
 				<div class="container">
-					<div class="row">
+					<div class="row">';
+						echo '<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Dropdown button
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</div>';
 					   
-						<div class="col-md-12">
+						echo'<div class="col-md-12">
 					<div class="owl-carousel owl-theme">';
 						foreach ($ligne as $row) {
 							echo'
 								<div class="item">
 									<div class="product_blog_img">
-										<img src=';echo $row['image'];echo'alt="#" />
+										<a href="index.php?module=mod_plat&action=afficherPlat&idPlat='.$row['id_burger'].'  "><img src=';echo $row['image'];echo' alt="#" /></a>
 									</div>
 									<div class="product_blog_cont">
 										<h3>';echo $row['nom'];echo'</h3>
@@ -90,23 +100,23 @@ class VuePlat extends VueGenerique1{
 			<section class="resip_section">
 				<div class="container">
 					<div class="row">
-					   
+						
 						<div class="col-md-12">
-					<div class="owl-carousel owl-theme">';
-						foreach ($ligne as $row) {
-							echo'
-								<div class="item">
-									<div class="product_blog_img">
-										<img src=';echo $row['image'];echo'alt="#" />
-									</div>
-									<div class="product_blog_cont">
-										<h3>';echo $row['nom'];echo'</h3>
-										<h4><span class="theme_color">$</span>';echo $row['prix'];echo'</h4>
-									</div>
-								</div>';
-						}		
-					echo '</div>
-				</div>
+							<div class="owl-carousel owl-theme">';
+								foreach ($ligne as $row) {
+									echo'
+										<div class="item">
+											<div class="product_blog_img">
+												<img src=';echo $row['image'];echo' alt="#" />
+											</div>
+											<div class="product_blog_cont">
+												<h3>';echo $row['nom'];echo'</h3>
+												<h4><span class="theme_color">$</span>';echo $row['prix'];echo'</h4>
+											</div>
+										</div>';
+								}		
+							echo '</div>
+						</div>
 					</div>
 				</div>
 			</section>

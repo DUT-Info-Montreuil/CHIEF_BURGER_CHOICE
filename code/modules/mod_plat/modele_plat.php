@@ -43,7 +43,7 @@ class ModelePlat extends Connexion{
 	}
 
 	public function liste_plat() {
-		$requete = self::$bdd->prepare("SELECT * FROM Menu");
+		$requete = self::$bdd->prepare("SELECT * FROM Burger");
         $requete->execute();
 		$row = $requete->fetchAll();
 

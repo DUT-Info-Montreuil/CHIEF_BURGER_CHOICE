@@ -935,17 +935,27 @@
 }
 
 .formConnexion {
-	margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 200px;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 50px;
+    background-color: #d8b00f;
+}
 
+.form-control {
+    border-color: #000;
+    border-width: 1px;
+    line-height: normal;
+   
 }
 
 .formInscription {
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 200px;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: #d8b00f;
 }
+
 
 .formPlat {
     margin: auto;
@@ -953,3 +963,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+
