@@ -25,10 +25,8 @@ class ModeleConnexion extends Connexion{
                 $dest=$mail;
                 $objet="Bienvenue dans notre restaurant";
                 $message="
-                    <font face='arial'>
                     Bonjour ".$login." et bienvenue.n
                     Pour valider votre inscription vous devez écrire le code suivant 
-                    </font>
                 ";
                 $entetes="Content-Type: text/html; charset=iso-8859-1";
                 $entetes.="From: chiefburgerchoice@gmail.com";

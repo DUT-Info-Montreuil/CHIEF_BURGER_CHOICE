@@ -20,7 +20,7 @@ if(isset($_POST['inscription'])){
             $dest=$_POST['email'];
             $objet="Bienvenue dans notre restaurant";
             $message='
-                http://localhost/CHIEF_BURGER_CHOICE/code/verif.php?id'.$_SESSION['id'].'=&cle='.$cle;
+                http://localhost/CHIEF_BURGER_CHOICE/code/confirmationEmail/verif.php?id='.$_SESSION['id'].'&cle='.$cle;
             $entetes="Content-Type: text/html; charset=iso-8859-1";
             $entetes.="From: chiefburgerchoice@gmail.com";
                 
