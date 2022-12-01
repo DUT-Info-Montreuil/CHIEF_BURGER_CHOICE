@@ -78,7 +78,7 @@
             public function dislike(){
 
                 //dislike disponible sur la page du burger
-                
+
                 //recup de l'id du client dislike
                 $id_like = $_SESSION['log'];
                 $sql_recup_id = Connexion::$bdd->prepare('SELECT * FROM Utilisateurs WHERE nom = ?');
@@ -88,6 +88,11 @@
                 $id_burger_cliqué = $_GET['idPlat'];
                 $sql_recup_id_burger = Connexion::$bdd->prepare('SELECT * FROM Burger WHERE id = ?');
                 $sql_recup_id_burger->execute(array($id_burger_cliqué));
+
+
+                //verif si le client a liké ce burger : SI OUI -> supprimer ce like dans la table j_aime + ajout dans la table dislike --- SI NON -> ajout dans la table dislike
+                $verif_like_dislike = Connexion::$bdd->prepare('SELECT id_utilisateur, id_burger FROM j_aime WHERE id_utilisateur = ? AND id_burger = ?');
+                $verif_like_dislike->execute(array($id_like,$id_burger_cliqué));
 
                 //insertions des 2 dans la table_like
                 $insertion_like = Connexion::$bdd->prepare('INSERT INTO j_aime VALUES ( ?, ?)');
