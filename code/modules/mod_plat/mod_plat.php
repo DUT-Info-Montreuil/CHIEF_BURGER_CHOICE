@@ -1,4 +1,5 @@
 <?php
+
 include_once "cont_plat.php";
 
 class ModPlat {
@@ -22,6 +23,7 @@ class ModPlat {
 			case "afficher_menus":
 				$this->controleur->afficher_menus();
 				break;
+
 			case "commande_plat":
 				$this->controleur->commande_plat();
 				break;
@@ -32,6 +34,7 @@ class ModPlat {
 		$tamp = $this->controleur->getVue()->getAffichage();	
 		$this->controleur->getVue()->setTampon($tamp);		
 	}
+	
 }
 
 ?>

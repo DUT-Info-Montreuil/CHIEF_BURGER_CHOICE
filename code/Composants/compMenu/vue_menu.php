@@ -10,7 +10,6 @@ class VueMenu extends VueGenerique1 {
 		parent::__construct();
 
 			$this->contenu = '<nav><a href="index.php?module=mod_plat">Choix des menus</a> - ';
-
 			if(!isset($_SESSION['login'])){
 					
 				$this->contenu .= "<a href=index.php?module=mod_connexion&action=connecter>Connexion</a> - <a href=index.php?module=mod_connexion&action=inscription>Inscription</a></nav>";

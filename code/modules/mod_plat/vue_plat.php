@@ -33,6 +33,7 @@ class VuePlat extends VueGenerique1{
 		</div>';
     }
 
+
 	public function afficher_menus($ligne,$filtre) {
 		echo '
 			<div class="yellow_bg">
@@ -122,8 +123,7 @@ class VuePlat extends VueGenerique1{
 						</div>
 					</div>
 				</div>
-			</section>
-		';
+			</section>';
 	}
 
 	public function affichePlat() {
@@ -133,12 +133,8 @@ class VuePlat extends VueGenerique1{
 						<div class="product_blog_img">
 							<img src='.$row['image'].' alt="#" />
 						</div>
-					</div>
-			</section>';
-
+					</div>';
 	}
-	
 }
 
 ?>
-

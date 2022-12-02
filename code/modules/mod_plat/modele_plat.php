@@ -1,4 +1,6 @@
+
 <?php
+
 include_once "Connexion.php";
 
 class ModelePlat extends Connexion{
@@ -14,6 +16,8 @@ class ModelePlat extends Connexion{
 
 
 		$requete1 = self::$bdd->prepare("SELECT * FROM Boisson WHERE nom = ?");
+        $requete1->execute([$_POST['boisson']]);
+
 	$requete1->execute("Fanta"/*[$_POST['boisson']]*/);
         $boisson = $requete1->fetch();
 	
@@ -25,6 +29,8 @@ class ModelePlat extends Connexion{
 		
 
 		$idCommande = $this->commande();
+
+
 
 		$sth1 = self::$bdd->prepare('insert into Menu (id_menu,nom,prix,id_boisson,id_commande,id_burger) values (?,?,?,?,?,?)');
 		$sth1->execute(array(null,$burger['nom'],$prix,$idBoisson,$idCommande,$idBurger));

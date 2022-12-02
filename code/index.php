@@ -11,20 +11,22 @@ switch($module) {
 		include_once ("modules/".$module."/".$module.".php");
 		$mod = new ModPlat;
 		break;
+	case "mod_burger":
+		include_once ("modules/".$module."/".$module.".php");
+		$mod = new ModBurger;
+		break;
+
 				
 		default:
 			die();
 }
-
-include_once "Composants/compMenu/comp_menu.php";
-$menu = new compMenu();
-
 $mod->exec();
+
+require_once "Composants/compMenu/comp_menu.php";
+$menu = new CompMenu();
 		
 require_once "template.php";
 ?>
 	
 
 	
-
-

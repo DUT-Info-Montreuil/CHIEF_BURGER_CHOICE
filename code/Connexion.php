@@ -12,7 +12,7 @@ class Connexion {
 		$dsn = 'mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr';
 		$user = 'dutinfopw201653';
 		$password = 'vyzepuru';	
-		//database-etudiants.iut.univ-paris8.fr
+
 
 		self::$bdd = new PDO($dsn, $user, $password);
 	}
