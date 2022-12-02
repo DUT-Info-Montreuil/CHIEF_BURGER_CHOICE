@@ -1,6 +1,6 @@
 <?php
 session_start();
-//$bdd = new PDO('mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr', 'dutinfopw201653', 'vyzepuru');
+// $bdd = new PDO('mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr', 'dutinfopw201653', 'vyzepuru');
 $bdd = new PDO('mysql:host=localhost;dbname=cbc;', 'dutinfopw201653', 'vyzepuru');
 if(isset($_POST['inscription'])){
     if(!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['mdp'])){
@@ -25,7 +25,7 @@ if(isset($_POST['inscription'])){
             $entetes.="From: chiefburgerchoice@gmail.com";
                 
             if(mail($dest,$objet,$message,$entetes))
-                echo "Mail envoyé avec succès.";
+                echo "Nous avons envoyé un mail à l'adresse que vous avez fourni afin de vérifier que l'adresse email est bien la votre.";
             else
                 echo "Un problème est survenu.";
         }

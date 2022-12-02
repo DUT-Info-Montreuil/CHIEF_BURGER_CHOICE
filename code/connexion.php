@@ -9,12 +9,8 @@ class Connexion {
 	}
 
 	public static function initConnexion() {
-		$dsn = 'mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr';
-		$user = 'dutinfopw201653';
-		$password = 'vyzepuru';	
-		//database-etudiants.iut.univ-paris8.fr
-
-		self::$bdd = new PDO($dsn, $user, $password);
+		// $bdd = new PDO('mysql:dbname=dutinfopw201653;host=database-etudiants.iut.univ-paris8.fr', 'dutinfopw201653', 'vyzepuru');
+		$bdd = new PDO('mysql:host=localhost;dbname=cbc;', 'dutinfopw201653', 'vyzepuru');
 	}
 }
 
