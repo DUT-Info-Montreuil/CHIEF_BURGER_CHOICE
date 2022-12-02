@@ -15,12 +15,13 @@ switch($module) {
 		default:
 			die();
 }
-$mod->exec();
 
-require_once "Composants/compMenu/comp_menu.php";
-$menu = new CompMenu();
+include_once "Composants/compMenu/comp_menu.php";
+$menu = new compMenu();
+
+$mod->exec();
 		
-require_once "template.php";	
+require_once "template.php";
 ?>
 	
 

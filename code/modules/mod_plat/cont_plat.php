@@ -22,8 +22,25 @@ class ContPlat{
 		}
 	}
 
+	public function afficher_menus() {
+		$row = $this->modele->liste_plat();
+		$this->vue->afficher_menus($row);
+	}
+
 	public function getVue() {
 		return $this->vue;
-	}	
+	}
+	
+	public function commande_plat() {
+		if (isset($_POST['commande'])) {
+			$this->modele->inserer_plat();
+		}
+	}
+
+	public function affichePlat() {
+		$this->modele->affichePlat();
+	}
+	
+
 }
 ?>
