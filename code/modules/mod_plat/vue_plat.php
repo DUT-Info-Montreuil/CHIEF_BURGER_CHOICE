@@ -33,7 +33,7 @@ class VuePlat extends VueGenerique1{
 		</div>';
     }
 
-	public function afficher_menus($ligne) {
+	public function afficher_menus($ligne,$filtre) {
 		echo '
 			<div class="yellow_bg">
 				<div class="container">
@@ -51,13 +51,13 @@ class VuePlat extends VueGenerique1{
 
 				<div class="select-filtre">
 					<form action="filtre-categorie" method"POST">';
-						foreach($ligne as $row) {
-							echo '
-							<label for="">'.$row['nom'].'</label>
-							<input type="checkbox" name= "login">
-							';
-						}
-					echo'	<button type="submit" class="btn btn-primary" name="appliquer_filtre">Appliquez vos filtres</button>
+					foreach($filtre as $row) {
+						echo '
+						<label for="">'.$row['nom'].'</label>
+						<input type="checkbox" name= "login">
+						';
+					}
+					echo'<button type="submit" class="btn btn-primary" name="appliquer_filtre">Appliquez vos filtres</button>
 					</form>
 			 	</div>
 
@@ -126,7 +126,15 @@ class VuePlat extends VueGenerique1{
 		';
 	}
 
-	public function afm2() {
+	public function affichePlat() {
+		$idPlat = $_GET['idPlat'];
+		echo'<section class="resip_section">
+					<div class="page-commande">
+						<div class="product_blog_img">
+							<img src='.$row['image'].' alt="#" />
+						</div>
+					</div>
+			</section>';
 
 	}
 	

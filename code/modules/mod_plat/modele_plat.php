@@ -50,8 +50,20 @@ class ModelePlat extends Connexion{
 		return $row;		
 	}
 
-	public function affichePlat() {
-		echo $_GET['idPlat'];
+	public function liste_boisson() {
+		$requete = self::$bdd->prepare("SELECT * FROM Boisson");
+        $requete->execute();
+		$row = $requete->fetchAll();
+
+		return $row;
+	}
+
+	public function liste_categorie() {
+		$requete = self::$bdd->prepare("SELECT * FROM Categorie");
+        $requete->execute();
+		$row = $requete->fetchAll();
+
+		return $row;		
 	}
 }
 ?>

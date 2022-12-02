@@ -33,7 +33,7 @@ class ModeleConnexion extends Connexion{
         $requete = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE nom = ?");
         $requete->execute([$_POST['login']]);
         $utilisateur = $requete->fetch();
-
+        
         if ($utilisateur && password_verify($_POST['password'], $utilisateur['password'])) {
             $_SESSION['log'] = $utilisateur['nom'];
             echo "connexion";

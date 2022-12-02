@@ -23,8 +23,9 @@ class ContPlat{
 	}
 
 	public function afficher_menus() {
-		$row = $this->modele->liste_plat();
-		$this->vue->afficher_menus($row);
+		$liste = $this->modele->liste_plat();
+		$filtre = $this->modele->liste_categorie();
+		$this->vue->afficher_menus($liste,$filtre);
 	}
 
 	public function getVue() {
@@ -38,9 +39,8 @@ class ContPlat{
 	}
 
 	public function affichePlat() {
-		$this->modele->affichePlat();
+		$this->vue->affichePlat();
 	}
 	
-
 }
 ?>

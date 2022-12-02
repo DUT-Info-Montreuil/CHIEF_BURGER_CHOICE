@@ -22,17 +22,9 @@
         </header>
       
             <?php							
-               // echo $mod->controleur->getVue()->getTampon();
-              echo'
-               <p>
-               Texte visible
-             </p>
-             <p class="secret">
-               Texte invisible
-             </p>
-             ';
+                echo $mod->controleur->getVue()->getTampon();
             ?>
-       
+ 
     </body>
 
     <footer>
