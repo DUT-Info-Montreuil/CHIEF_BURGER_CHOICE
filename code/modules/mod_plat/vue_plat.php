@@ -50,17 +50,15 @@ class VuePlat extends VueGenerique1{
 			<section class="resip_section">
 
 				<div class="select-filtre">
-					<fieldset>
-						<legend>Veuillez sélectionner vos intérêts :</legend>
-						<div>
-						<input type="checkbox" id="coding" name="interest" value="coding">
-						<label for="coding">Développement</label>
-						</div>
-						<div>
-						<input type="checkbox" id="music" name="interest" value="music">
-						<label for="music">Musique</label>
-						</div>
-					</fieldset>
+					<form action="filtre-categorie" method"POST">';
+						foreach($ligne as $row) {
+							echo '
+							<label for="">'.$row['nom'].'</label>
+							<input type="checkbox" name= "login">
+							';
+						}
+					echo'	<button type="submit" class="btn btn-primary" name="appliquer_filtre">Appliquez vos filtres</button>
+					</form>
 			 	</div>
 
 				<div class="container">
