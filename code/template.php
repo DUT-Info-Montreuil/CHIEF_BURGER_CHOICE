@@ -104,7 +104,7 @@
         <?php	
             include_once '/home/etudiants/info/mghrairi/local_html/CBC/CHIEF_BURGER_CHOICE/code/modules/mod_burger/modele_burger.php';						
             echo $mod->controleur->getVue()->getTampon();
-            ModeleBurger::dislike();
+        
         ?>
 
 
@@ -116,14 +116,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="footer_logo">
-                          <a href="index.html"><img src="images/logo1.jpg" alt="logo" /></a>
+                          <a href="index.html"><img src="images/logo_cbc.png" alt="logo" /></a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <ul class="lik">
                             <li class="active"> <a href="index.html">Home</a></li>
                             <li> <a href="about.html">About</a></li>
-                            <li> <a href="recipe.html">Recipe</a></li>
+                            <li> <a href="index.php?module=mod_plat&action=afficher_menus">Menu</a></li>
                             <li> <a href="blog.html">Blog</a></li>
                             <li> <a href="contact.html">Contact us</a></li>
                         </ul>

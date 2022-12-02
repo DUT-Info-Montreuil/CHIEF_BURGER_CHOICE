@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 
@@ -26,7 +25,7 @@ $mod->exec();
 require_once "Composants/compMenu/comp_menu.php";
 $menu = new CompMenu();
 		
-require_once "template.php";	
+require_once "template.php";
 ?>
 	
 
