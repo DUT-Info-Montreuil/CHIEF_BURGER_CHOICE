@@ -8,16 +8,9 @@ class ModeleConnexion extends Connexion{
 	}
 
 	public function ajoutUtilisateur() {
-        $sql = 'SELECT * FROM tableUtilisateurs';	
-		$num = 0;
-		foreach (self::$bdd ->query($sql) as $row) {
-			$num++;
-		}	
-		
         if ($_POST['login'] != null && $_POST['password'] != null && $_POST['mail'] != null) {
             if ($_POST['password'] == $_POST['confirmPassword']) {
                 $login = $_POST['login'];       
-                $id = $num+1;
                 $mail = $_POST['mail'];
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $confirmPassword = password_hash($_POST['confirmPassword'], PASSWORD_DEFAULT);
@@ -25,7 +18,7 @@ class ModeleConnexion extends Connexion{
                 $dest=$mail;
                 $objet="Bienvenue dans notre restaurant";
                 $message="
-                    Bonjour ".$login." et bienvenue.n
+                    Bonjour ".$login." et bienvenue\n
                     Pour valider votre inscription vous devez écrire le code suivant 
                 ";
                 $entetes="Content-Type: text/html; charset=iso-8859-1";
