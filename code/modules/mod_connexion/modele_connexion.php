@@ -19,7 +19,7 @@ class ModeleConnexion extends Connexion{
                 $sth = self::$bdd->prepare('insert into Utilisateur (id_utilisateur,nom,email,password, cle, confirme) values (?,?,?,?,?,?)');
                 $sth->execute(array(null,$login,$mail,$password, $cle, 0));
 
-                $recup_user=$bdd->prepare('SELECT * FROM Utilisateur WHERE email=?');
+                $recup_user =self::$bdd->prepare('SELECT * FROMid_utilisateur Utilisateur WHERE email=?');
                 $recup_user->execute(array($mail));
                 if($recup_user->rowCount()>0){
                     $user_infos = $recup_user->fetch();
@@ -62,7 +62,7 @@ class ModeleConnexion extends Connexion{
                     } else {
                         echo "login ou mot de passe incorrect";
                     }
-                    header('Location: verif.php?id='.$info_user['id'].'&cle='.$info_user['cle']);
+                    header('Location: verif.php?id='.$utilisateur['id_utilisateur'].'&cle='.$utilisateur['cle']);
                 } else {
                     echo "Vous n'avez pas encore été confirmé. Veuillez le faire afin d'accéder à notre site";
                 }

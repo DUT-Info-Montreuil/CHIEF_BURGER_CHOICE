@@ -13,10 +13,6 @@ class ContConnexion {
 		$this->modele = new ModeleConnexion;
 	}
 
-	public function menu() {
-		echo "menu ".'<br>';
-		$this->vue->menu();
-	}
 
     public function form_inscription() {
         $this->vue->form_inscription();

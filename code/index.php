@@ -16,8 +16,6 @@ switch($module) {
 			die();
 }
 
-include_once "Composants/compMenu/comp_menu.php";
-$menu = new compMenu();
 
 $mod->exec();
 		

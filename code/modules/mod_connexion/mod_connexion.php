@@ -13,9 +13,7 @@ class ModConnexion {
 
 	public function exec() {
 		switch ($this->action) {
-			case "menu":
-		   		$this->controleur->menu();
-		    	break;
+
 			case "inscription":
                 $this->controleur->form_inscription();
 				break;
