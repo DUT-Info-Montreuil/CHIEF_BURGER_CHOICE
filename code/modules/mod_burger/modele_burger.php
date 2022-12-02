@@ -67,11 +67,21 @@
                 $sql_recup_id_burger = Connexion::$bdd->prepare('SELECT * FROM Burger WHERE id = ?');
                 $sql_recup_id_burger->execute(array($id_burger_cliqué));
 
-                //insertions des 2 dans la table_like
-                $insertion_like = Connexion::$bdd->prepare('INSERT INTO j_aime VALUES ( ?, ?)');
-                $insertion_like->execute(array($sql_recup_id,$sql_recup_id_burger));
- 
+                //verif si le client a liké ce burger : SI OUI -> supprimer ce like dans la table dislike + ajout dans la table j_aime --- SI NON -> ajout dans la table j_aime
+                $verif_like_dislike = Connexion::$bdd->prepare('SELECT id_utilisateur, id_burger FROM dislike WHERE id_utilisateur = ? AND id_burger = ?');
+                $verif_like_dislike->execute(array($id_like,$id_burger_cliqué));
+                $dislike = count($verif_like_dislike->fetchAll());
 
+                if ($dislike != 0) {
+
+                    $supp_dislike = Connexion::$bdd->prepare('DELETE FROM dislike WHERE id_utilisateur = ? AND id_burger = ?');
+                    $supp_dislike->execute(array($id_like,$id_burger_cliqué));
+                }
+                
+                    //insertions du like dans la table_like
+                    $insertion_like = Connexion::$bdd->prepare('INSERT INTO dislike VALUES ( ?, ?)');
+                    $insertion_like->execute(array($sql_recup_id,$sql_recup_id_burger));
+                
             }
 
 
@@ -93,10 +103,19 @@
                 //verif si le client a liké ce burger : SI OUI -> supprimer ce like dans la table j_aime + ajout dans la table dislike --- SI NON -> ajout dans la table dislike
                 $verif_like_dislike = Connexion::$bdd->prepare('SELECT id_utilisateur, id_burger FROM j_aime WHERE id_utilisateur = ? AND id_burger = ?');
                 $verif_like_dislike->execute(array($id_like,$id_burger_cliqué));
+                $like = count($verif_like_dislike->fetchAll());
+                if ($like != 0) {
 
-                //insertions des 2 dans la table_like
-                $insertion_like = Connexion::$bdd->prepare('INSERT INTO j_aime VALUES ( ?, ?)');
-                $insertion_like->execute(array($sql_recup_id,$sql_recup_id_burger));
+                    $supp_like = Connexion::$bdd->prepare('DELETE FROM j_aime WHERE id_utilisateur = ? AND id_burger = ?');
+                    $supp_like->execute(array($id_like,$id_burger_cliqué));
+                    
+                }
+                    //insertions du like dans la table_like
+                    $insertion_like = Connexion::$bdd->prepare('INSERT INTO dislike VALUES ( ?, ?)');
+                    $insertion_like->execute(array($sql_recup_id,$sql_recup_id_burger));
+                
+
+                
  
 
             }

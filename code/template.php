@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Spicyo</title>
+    <title>CHIEF BURGER CHOICE</title>
+    <link rel="shortcut icon" href="images/logo_page_cbc.png">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -100,8 +101,10 @@
 	
 
 
-        <?php							
+        <?php	
+            include_once '/home/etudiants/info/mghrairi/local_html/CBC/CHIEF_BURGER_CHOICE/code/modules/mod_burger/modele_burger.php';						
             echo $mod->controleur->getVue()->getTampon();
+            ModeleBurger::dislike();
         ?>
 
 
@@ -203,4 +206,3 @@
 
 </body>
 </html>
->>>>>>> feature/boulaye
