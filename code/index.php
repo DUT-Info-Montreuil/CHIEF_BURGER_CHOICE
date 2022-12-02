@@ -23,8 +23,3 @@ $mod->exec();
 		
 require_once "template.php";
 ?>
-	
-
-	
-
-

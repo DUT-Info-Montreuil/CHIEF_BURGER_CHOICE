@@ -1,14 +1,11 @@
 <?php
-
 include_once "Connexion.php";
 
 class ModeleConnexion extends Connexion{
 
-	
 	public function __construct() {
 		self::initConnexion();
 	}
-
 	public function ajoutUtilisateur() {
 
         if ($_POST['login'] != null || $_POST['password'] != null || $_POST['mail'] != null) {
