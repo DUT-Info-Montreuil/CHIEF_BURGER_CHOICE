@@ -12,7 +12,7 @@ if (isset($_POST['Valider'])){
             if($info_user['confirme'] == 1){
                 header('Location: verif.php?id='.$info_user['id'].'&cle='.$info_user['cle']);
             } else {
-                echo "Vous n'avez pas encore été confirmé. Veuillez le faire afin d'accéder à notre site";
+                echo "Vous n'avez pas encore confirmé votre adresse email. Veuillez le faire afin d'accéder à notre site";
             }
         } else {
             echo "Le compte n'existe pas";

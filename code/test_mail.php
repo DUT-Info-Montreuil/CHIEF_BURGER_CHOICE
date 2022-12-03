@@ -12,5 +12,4 @@ if(mail($dest,$objet,$message,$entetes))
     echo "Mail envoyé avec succès.";
 else
     echo "Un problème est survenu.";
-//mail($dest , $objet , $message , $entetes);
 ?>

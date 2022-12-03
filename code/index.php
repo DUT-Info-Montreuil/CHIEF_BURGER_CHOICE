@@ -7,10 +7,6 @@ switch($module) {
 		include_once ("modules/".$module."/".$module.".php");
 		$mod = new ModConnexion;
 		break;
-	case "mod_plat":
-		include_once ("modules/".$module."/".$module.".php");
-		$mod = new ModPlat;
-		break;
 				
 		default:
 			die();
