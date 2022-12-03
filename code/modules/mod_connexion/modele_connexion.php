@@ -25,11 +25,16 @@ class ModeleConnexion extends Connexion{
                 $_SESSION['id'] = $user_infos['id_utilisateur'];
 
                 $dest=$_POST['mail'];
+                $a = $_SESSION['id'];
             
                 $objet="Bienvenue dans notre restaurant";
-                $message='
-                    http://localhost/CHIEF_BURGER_CHOICE/code/modules/mod_connexion/verif.php?id='.$_SESSION['id'].'&cle='.$cle;
-                $entetes="Content-Type: text/html; charset=iso-8859-1";
+                $message="
+                Vous venez de vous inscrire chez Chief Burger Choice. \r\n
+                Pour confirmer votre inscription veuillez clicker 
+                <a href = 'http://localhost/CHIEF_BURGER_CHOICE/code/modules/mod_connexion/verif.php?id=$a&cle=$cle' > ici </a>
+                    ";
+                $entetes = "MIME-Version: 1.0\r\n";
+                $entetes.="Content-Type: text/html; charset=iso-8859-1\r\n";
                 $entetes.="From: chiefburgerchoice@gmail.com";
                 
                 if(mail($dest,$objet,$message,$entetes))
