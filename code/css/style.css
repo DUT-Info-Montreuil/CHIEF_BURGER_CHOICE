@@ -961,23 +961,7 @@
 
 
  
-.selectionIngredients {
-     color: #e3d105;
-     font-size: 20px;
-     border-width: 3px;
-     border-style: solid;
-     border-color: black;
-     width: 600px;
-     height: 750px;
-     padding: 70px;
-     overflow: scroll;
-     background: #212020;
-}
 
-.selectionIngredients p {
-     font-size: 25px;
-     font-weight:bold;
-}
 
 .formConnexion {
     margin-top: 200px;
@@ -1012,3 +996,29 @@
 
 
 
+
+/*****************************************BURGER CREATION BURGER****************************/
+
+.imageBurger img {
+     width: 600px;
+     height: 600px;
+ }
+
+ .selectionIngredients {
+     display: inline-block;
+     color: #e3d105;
+     font-size: 20px;
+     border-width: 3px;
+     border-style: solid;
+     border-color: black;
+     width: 550px;
+     height: 750px;
+     padding: 70px;
+     overflow: scroll;
+     background: #212020;
+}
+
+.selectionIngredients p {
+     font-size: 25px;
+     font-weight:bold;
+}

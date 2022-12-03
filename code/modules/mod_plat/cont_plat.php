@@ -30,8 +30,12 @@ class ContPlat{
 
 	public function getVue() {
 		return $this->vue;
-	}	
+	}
 
+
+	public function affiche_page_burger(){
+		$this->vue->afficher_page_burger();
+	}
 	
 	
 	public function commande_plat() {

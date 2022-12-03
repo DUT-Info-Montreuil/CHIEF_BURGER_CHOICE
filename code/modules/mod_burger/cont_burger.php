@@ -14,10 +14,12 @@
 
         
         public function form_ajout() {
+            echo' fonction form ajout ';
             $this->vue->form_ajout();
         }
 
         public function ajout() {
+            //echo' fonction creer burger ';
             if (isset($_POST['Valider'])) {
                 $this->modele->creerBurger(); 
             }

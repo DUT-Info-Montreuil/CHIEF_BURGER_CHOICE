@@ -52,7 +52,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="index.php?module=mod_burger&action=creer_burger">Créer Votre Burger</a>
                     </li>
                     <li>
                         <a href="index.php?module=mod_plat&action=afficher_menus">Menu</a>
@@ -102,7 +102,8 @@
 
 
         <?php	
-            include_once '/home/etudiants/info/mghrairi/local_html/CBC/CHIEF_BURGER_CHOICE/code/modules/mod_burger/modele_burger.php';						
+            //include_once '/home/etudiants/info/mghrairi/local_html/CBC/CHIEF_BURGER_CHOICE/code/modules/mod_burger/modele_burger.php';
+            include_once 'C:\wamp64\www\CBC_home\CHIEF_BURGER_CHOICE-1\code\modules\mod_burger\modele_burger.php';						
             echo $mod->controleur->getVue()->getTampon();
         
         ?>

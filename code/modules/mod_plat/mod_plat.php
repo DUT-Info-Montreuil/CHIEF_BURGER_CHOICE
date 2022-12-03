@@ -27,6 +27,10 @@ class ModPlat {
 			case "commande_plat":
 				$this->controleur->commande_plat();
 				break;
+				
+			case "afficherPlat&idPlat":
+				$this->controleur->affiche_page_burger();
+				break;
 		}
 		$tamp = $this->controleur->getVue()->getAffichage();	
 		$this->controleur->getVue()->setTampon($tamp);		
