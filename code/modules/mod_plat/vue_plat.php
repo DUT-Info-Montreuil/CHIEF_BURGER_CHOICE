@@ -189,7 +189,8 @@ class VuePlat extends VueGenerique1{
 					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 						<div class="about_box">
 							<h3>'; echo $row['nom'] ; echo'</h3>
-							<p></p>
+							<p>'; echo $row['prix'] ; echo'$</p></br>
+							<p>';/* echo $row[''] ;*/ echo'</p></br>
 							
 						</div>
 					</div>
