@@ -28,7 +28,7 @@ class ModPlat {
 				$this->controleur->commande_plat();
 				break;
 				
-			case "afficherPlat&idPlat":
+			case "afficherPlat":
 				$this->controleur->affiche_page_burger();
 				break;
 		}
