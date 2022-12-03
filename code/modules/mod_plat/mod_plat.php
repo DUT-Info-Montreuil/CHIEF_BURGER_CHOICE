@@ -29,7 +29,7 @@ class ModPlat {
 				break;
 				
 			case "afficherPlat":
-				$this->controleur->affiche_page_burger();
+				$this->controleur->afficher_burger();
 				break;
 		}
 		$tamp = $this->controleur->getVue()->getAffichage();	

@@ -155,37 +155,55 @@ class VuePlat extends VueGenerique1{
 			<?php
 	}
 
-	public function afficher_page_burger(){
+	public function afficher_page_burger($ligne){
 
-		echo'<!-- about -->
-		<div class="about">
-			<div class="container">
-			  <div class="row">
-				 <div class="col-md-12">
-					 <div class="title">
-						<i><img src="images/title.png" alt="#"/></i>
-						
-					 </div>
-				  </div>
-			   </div>
-			   <div class="row">
-				 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-					 <div class="about_box">
-						 <h3>Best Food</h3>
-						 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscureContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard </p>
-						 
-					 </div>
-				 </div>
-				  <div class="col-xl-5 col-lg-5 col-md-10 col-sm-12 about_img_boxpdnt">
-					 <div class="about_img">
-						 <figure><img src="images/Le_SLIMANI.jpg" alt="#/"></figure>
-					 </div>
-				 </div>      
-			   </div> 
+		/*
+		Aller chercher dans la BDD le burger ou ID=$_GET['id_Plat]
+		
+		afficher :
+		-nom
+		-prix
+		-categorie
+		-liste de ses infrgedients
+		-bouton like
+		-avis (commentaires)
+		 
+		
+		
+		*/
+
+		foreach($ligne as $row){
+			if($row['id_burger'] == $_GET['idPlat']){
+			echo'<!-- about -->
+			<div class="about">
+				<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title">
+							<i><img src="images/title.png" alt="#"/></i>
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+						<div class="about_box">
+							<h3>'; echo $row['nom'] ; echo'</h3>
+							<p></p>
+							
+						</div>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-10 col-sm-12 about_img_boxpdnt">
+						<div class="about_img">
+							<figure>'; echo $row['image'] ; echo'</figure>
+						</div>
+					</div>      
+				</div> 
+				</div>
 			</div>
-		</div>
-		<!-- end about -->';
-
+			<!-- end about -->';
+			}
+		}
 	}
 }
 

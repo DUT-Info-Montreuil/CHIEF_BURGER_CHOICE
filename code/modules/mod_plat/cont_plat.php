@@ -28,15 +28,17 @@ class ContPlat{
 		$this->vue->afficher_menus($row);
 	}
 
+	public function afficher_burger() {
+		$row = $this->modele->liste_plat();
+		$this->vue->afficher_page_burger($row);
+	}
+
 	public function getVue() {
 		return $this->vue;
 	}
 
 
-	public function affiche_page_burger(){
-		$this->vue->afficher_page_burger();
-	}
-	
+
 	
 	public function commande_plat() {
 		if (isset($_POST['commande'])) {
