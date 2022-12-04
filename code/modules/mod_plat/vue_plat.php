@@ -155,7 +155,7 @@ class VuePlat extends VueGenerique1{
 			<?php
 	}
 
-	public function afficher_page_burger($ligne/*, $ligne_ingredient*/){
+	public function afficher_page_burger($ligne, $ligne_ingr){
 
 		/*
 		Aller chercher dans la BDD le burger ou ID=$_GET['id_Plat]
@@ -189,13 +189,13 @@ class VuePlat extends VueGenerique1{
 					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 						<div class="about_box">
 							<h3>'; echo $row['nom'] ; echo'</h3>
-							<p>'; echo $row['prix'] ; echo'$</p></br>
+							<p>'; echo $row['prix'] ; echo'€</p></br>
 							<p>';
-							/*foreach($ligne_ingr as $row){
-								if($row['id_burger'] == $_GET['idPlat']){
-									
-								}
-							}*/
+							foreach($ligne_ingr as $row2){
+								
+									echo'<p>'; echo $row2['nom'] ; echo'</p>';
+								
+							}
 							echo'</p></br>
 							
 						</div>

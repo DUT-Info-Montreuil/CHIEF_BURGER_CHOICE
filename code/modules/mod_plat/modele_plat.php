@@ -56,12 +56,13 @@ class ModelePlat extends Connexion{
 		return $row;		
 	}
 
-	public function liste_ingredients_d_un_burger($ingrdient_recherche){
-		$requete = self::$bdd->prepare("SELECT Ingrédient.nom FROM Ingrédient INNER JOIN composé ON Ingrédient.id_ingredient=composé.id_ingredient 
-										INNER JOIN Burger ON composé.id_burger = Burger.id_burger WHERE Burger.id_burger = '$ingrdient_recherche'");
-        $requete->execute();
+	public function liste_ingredients_d_un_burger($ingrdient_recherche)/*va chercher les noms d'ingredients du burger ayant l'id passé en parametre*/{
+		$requete = self::$bdd->prepare("SELECT Ingredient.nom FROM Ingredient INNER JOIN compose ON Ingredient.id_ingredient=compose.id_ingredient 
+										INNER JOIN Burger ON compose.id_burger = Burger.id_burger WHERE Burger.id_burger = ?");
+        $requete->execute(array($ingrdient_recherche));
 		$row = $requete->fetchAll();
-	}
+		return $row;
+		}
 
 
 }
