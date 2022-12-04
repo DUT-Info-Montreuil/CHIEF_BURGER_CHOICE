@@ -1,28 +1,32 @@
-<!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Paiement</title>
-    </head>
-    <body>
-        <form action="payment.php">
-        <div>
-            <input type="text" name="name" required placeholder="Votre nom"> <br>
-            <input type="email" name="email" required placeholder="Votre adresse email"><br>
-            <input type="text" placeholder="Votre code de carte bleu"><br>
-            <input type="text" placeholder="Mois"><br>
-            <input type="text" placeholder="Année"><br>
-            <input type="text" placeholder="CVC"><br>
-        </div>
-        
-        <p>
-            <a href="/payment.php">Payer</a>
-        </p>
-        </form>
-    </body>
+<body>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&components=YOUR_COMPONENTS"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&components=buttons"></script>
+
+<?php
+$panier = new Panier();
+?>
+
+<div class="container py-5">
+    <h1>Panier</h1>
+    <div class="list">
+        <?php foreach ($panier->getProducts() as $product): ?>
+            <div class ="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <?= $product['name'] ?>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <?= money($product['price']) ?> €
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+    <?php
+    $payment = new PaypalPayment();
+    echo $payment->ui($panier);
+    ?>
+</div>
+</body>
 </html>
