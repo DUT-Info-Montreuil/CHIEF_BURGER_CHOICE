@@ -155,7 +155,7 @@ class VuePlat extends VueGenerique1{
 			<?php
 	}
 
-	public function afficher_page_burger($ligne){
+	public function afficher_page_burger($ligne/*, $ligne_ingredient*/){
 
 		/*
 		Aller chercher dans la BDD le burger ou ID=$_GET['id_Plat]
@@ -190,13 +190,19 @@ class VuePlat extends VueGenerique1{
 						<div class="about_box">
 							<h3>'; echo $row['nom'] ; echo'</h3>
 							<p>'; echo $row['prix'] ; echo'$</p></br>
-							<p>';/* echo $row[''] ;*/ echo'</p></br>
+							<p>';
+							/*foreach($ligne_ingr as $row){
+								if($row['id_burger'] == $_GET['idPlat']){
+									
+								}
+							}*/
+							echo'</p></br>
 							
 						</div>
 					</div>
 					<div class="col-xl-5 col-lg-5 col-md-10 col-sm-12 about_img_boxpdnt">
 						<div class="about_img">
-							<figure>'; echo $row['image'] ; echo'</figure>
+							<figure><img src=';echo $row['image'];echo' alt="#" /></figure>
 						</div>
 					</div>      
 				</div> 
