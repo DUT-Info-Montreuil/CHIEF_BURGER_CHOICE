@@ -2,7 +2,7 @@
 
 include_once "vue_generique.php";
 
-class VuePlat extends VueGenerique1{
+class VuePlat extends VueGenerique{
 	
 	public function __construct() {
 		parent::__construct();

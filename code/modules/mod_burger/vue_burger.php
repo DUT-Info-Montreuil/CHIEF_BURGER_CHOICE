@@ -3,7 +3,7 @@
     require_once('vue_generique.php');
 
 
-    class VueBurger extends VueGenerique1{
+    class VueBurger extends VueGenerique{
         
         public function __construct() {
             parent::__construct();

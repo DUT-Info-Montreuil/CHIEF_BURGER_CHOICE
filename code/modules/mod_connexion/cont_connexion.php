@@ -19,7 +19,14 @@ class ContConnexion {
     }
 
 	public function inscription() {
-        if (isset($_POST['inscrire'])) {
+        
+		
+		
+		
+		
+		
+		
+		/*if (isset($_POST['inscrire'])) {
 			if ($_POST['login'] != null && $_POST['password'] != null && $_POST['mail'] != null && $_POST['confirmPassword'] != null) {
 				if ($_POST['password'] == $_POST['confirmPassword']) {
 					$this->modele->ajoutUtilisateur();
@@ -29,7 +36,7 @@ class ContConnexion {
 			}else {
 				$this->vue->affichageErreur("Veuillez remplir tous les champs");
 			}
-		}
+		}*/
 	}
 
     public function form_connexion() {

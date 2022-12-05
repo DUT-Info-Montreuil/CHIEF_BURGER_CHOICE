@@ -40,19 +40,12 @@ class ModeleConnexion extends Connexion{
                 else
                     echo "Un problème est survenu.";
             }
-
-        } else {
-            print "les mots de passe ne sont pas identiques";
         }
-    } else {
-        print "Veuillez remplir tous les champs";
-    }
-    }
 	
     public function seConnecter() {
         if(!empty($_POST['login']) && !empty($_POST['password'])){
 
-            $requete = self::$bdd->prepare("SELECT * FROM utilisateur WHERE nom = ?");
+            $requete = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE nom = ?");
             $requete->execute([$_POST['login']]);
 
             if($requete->rowCount() > 0){

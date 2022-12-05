@@ -21,9 +21,6 @@ switch($module) {
 			die();
 }
 $mod->exec();
-
-require_once "Composants/compMenu/comp_menu.php";
-$menu = new CompMenu();
 		
 require_once "template.php";
 ?>
