@@ -37,16 +37,16 @@
             $choix_ingredients = $_POST['ingredient'];
             foreach ($choix_ingredients as $ingredient){ 
                 
-                $sql1= Connexion::$bdd->prepare('SELECT id_ingredient FROM Ingredient WHERE nom_ingredient = ?');
+                $sql1= Connexion::$bdd->prepare('SELECT id_ingredient FROM Ingredient WHERE nom = ?');
                 $sql1->execute(array($ingredient));
                 $verifSQL1=$sql1->fetch();
                 
                 $idIngr = $sql1;
                 
                 //var_dump($verifSQL1);
-                $sql3 = Connexion::$bdd->prepare('INSERT INTO table_liaison VALUES ( ?, ?)');
+                $sql3 = Connexion::$bdd->prepare('INSERT INTO compose VALUES ( ?, ?)');
                 $sql3->execute(array($dernier_ID,$verifSQL1['id_ingredient']));
-                                $sql1->execute(array($ingredient));
+                $sql1->execute(array($ingredient));
                 
             }
          
