@@ -13,18 +13,21 @@ class ContConnexion {
 		$this->modele = new ModeleConnexion;
 	}
 
-	public function menu() {
-		echo "menu ".'<br>';
-		$this->vue->menu();
-	}
-
     public function form_inscription() {
         $this->vue->form_inscription();
     }
 
 	public function inscription() {
         if (isset($_POST['inscrire'])) {
-			$this->modele->ajoutUtilisateur();
+			if ($_POST['login'] != null && $_POST['password'] != null && $_POST['mail'] != null && $_POST['confirmPassword'] != null) {
+				if ($_POST['password'] == $_POST['confirmPassword']) {
+					$this->modele->ajoutUtilisateur();
+				} else {
+					$this->vue->affichageErreur("Les mots de passe ne sont pas identiques");
+				}
+			}else {
+				$this->vue->affichageErreur("Veuillez remplir tous les champs");
+			}
 		}
 	}
 
@@ -33,9 +36,9 @@ class ContConnexion {
     }
 
 	public function connexion() {
-        if (isset($_POST['seConnecter'])) {
-			$this->modele->seConnecter();
-		}
+		if (isset($_POST['seConnecter'])) {
+				$this->modele->seConnecter();
+		} 
 	}
     
 	public function form_deconnexion() {

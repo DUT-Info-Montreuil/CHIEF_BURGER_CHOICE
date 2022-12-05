@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Spicyo</title>
+    <title>CHIEF BURGER CHOICE</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -50,20 +49,17 @@
                 <ul class="list-unstyled components">
 
                     <li class="active">
-                        <a href="index.html">Home</a>
+                        <a href="index.html">Acceuil</a>
                     </li>
                     <li>
                         <a href="index.php?module=mod_plat&action=afficher_menus">Menu</a>
                     </li>
                     <li>
-                        <a href="about.html">Créer votre burger</a>
+                        <a href="index.php?module=mod_burger&action=creer_burger">Créer votre burger</a>
                     </li>
                     
                     <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="contact.html">Contactez-nous</a>
                     </li>
                 </ul>
 
@@ -77,7 +73,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="full">
-                        <a class="logo" href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        <a class="logo" href="index.html"><img src="images/logo_cbc.png" alt="#" /></a>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -116,23 +112,32 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="footer_logo">
-                          <a href="index.html"><img src="images/logo1.jpg" alt="logo" /></a>
+                          <a href="index.html"><img src="images/logo_cbc.png" alt="logo" /></a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <ul class="lik">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li> <a href="about.html">About</a></li>
-                            <li> <a href="recipe.html">Recipe</a></li>
-                            <li> <a href="blog.html">Blog</a></li>
-                            <li> <a href="contact.html">Contact us</a></li>
+                        <li class="active">
+                        <a href="index.html">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="index.php?module=mod_plat&action=afficher_menus">Menu</a>
+                    </li>
+                    <li>
+                        <a href="index.php?module=mod_burger&action=creer_burger">Créer votre burger</a>
+                    </li>
+                    
+                    <li>
+                        <a href="contact.html">Contactez-nous</a>
+                    </li>
+                            
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>© 2022 Tous les droits réservé. Conçu par<a href="https://html.design/"> Marwan,Naoufel et Boulaye</a></p>
+                    <p>© 2022 Tous les droits réservé. Conçu par<a href="index.html"> Marwan,Naoufel et Boulaye</a></p>
                 </div>
             </div>
         </div>
@@ -144,6 +149,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
 
 
    <script src="js/jquery-3.0.0.min.js"></script>

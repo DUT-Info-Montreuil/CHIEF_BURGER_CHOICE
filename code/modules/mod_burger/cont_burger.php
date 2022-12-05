@@ -11,10 +11,10 @@
             $this->modele = new ModeleBurger();
             $this->vue = new VueBurger();
         }
-
-        
+    
         public function form_ajout() {
-            $this->vue->form_ajout();
+            $liste = $this->modele->liste_ingredients();
+            $this->vue->form_ajout($liste);
         }
 
         public function ajout() {

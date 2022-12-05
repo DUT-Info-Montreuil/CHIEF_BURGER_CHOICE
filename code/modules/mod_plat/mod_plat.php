@@ -9,26 +9,19 @@ class ModPlat {
 
     public function __construct() {
 		$this->controleur = new ContPlat();	
-		$this->action = isset($_GET['action']) ? $_GET['action'] : "choix_plat";
+		$this->action = isset($_GET['action']) ? $_GET['action'] : "afficher_menus";
 	}
 
     public function exec() {
 		switch ($this->action) {
-			case "choix_plat":
-                $this->controleur->choix_plat();
+			case "afficher_menus":
+				$this->controleur->afficher_menus();
 				break;
 			case "inserer_plat":
 		  		$this->controleur->inserer_plat();
 				break;
-			case "afficher_menus":
-				$this->controleur->afficher_menus();
-				break;
-
 			case "commande_plat":
 				$this->controleur->commande_plat();
-				break;
-			case "affichePlat":
-				$this->controleur->affichePlat();
 				break;
 		}
 		$tamp = $this->controleur->getVue()->getAffichage();	
@@ -36,5 +29,4 @@ class ModPlat {
 	}
 	
 }
-
 ?>

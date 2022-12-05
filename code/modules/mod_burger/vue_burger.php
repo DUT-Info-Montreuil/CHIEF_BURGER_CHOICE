@@ -10,69 +10,43 @@
         }
     
 
-        public function form_ajout() {
-            echo '<div class="blog">
-            <div class="imageBurger">
-            <img src="images/burger21.jpg" alt="logo" />
-            </div>
-            
-            <div  class="selectionIngredients">
-
-            <FORM ACTION="index.php?module=mod_burger&action=addIngredient" METHOD="POST">
-    
-                <INPUT TYPE="TEXT" NAME="nom_de_mon_burger" value="Nom du burger"> <br><br>
-                    
-                    <p>Merci de choisir vos ingredients:</p><br><br>
-    
-    
-                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
-                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
-                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
-                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
-                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
-    
-                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
-                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
-                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
-                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
-                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
-    
-                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
-                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
-                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
-                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
-                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
-    
-                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
-                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
-                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
-                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
-                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
-    
-                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
-                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
-                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
-                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
-                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
-    
-                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
-                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
-                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
-                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
-                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
-                    
-                    
-    
-    
-                    <INPUT TYPE="SUBMIT" NAME="bouton" value="Valider"> 
-                    </FORM>
+        public function form_ajout($liste_ingredients) {
+            echo '
+            <div class="blog">
+                <div class="imageBurger">
+                <img src="images/burger21.jpg" alt="logo" />
+                </div>
                 
-            </div>';
+                <div  class="selectionIngredients">
+                    <p>Merci de choisir vos ingredients:</p><br><br>
+                    
+                    <form action="index.php?module=mod_burger&action=addIngredient" method="POST">
+                    <div class="form-group">		
+						<input type="text" class="form-control" placeholder="Nom du burger" name= "nomBurger">
+					</div>';
+                    foreach($liste_ingredients as $row) {
+                        echo'
+                        <div class="form-creer">
+                            <div class="form-creer-burger">
+                                <label for="">'.$row['nom'].'</label>
+                                <input type="checkbox" name='.$row['id_ingredient'].'>
+                            </div>
+                            <div class="form-creer-burger">
+                                <h4><span class="theme_color">'.$row['prix'].'€</span></h4>
+                            </div>
+                        </div>
+                        ';
+                    }
+                    if(isset($_SESSION['log'])) {
+                        echo'<button type="submit" class="btn btn-primary" name="Valider">Créer votre burger</button>';
+                    } else {
+                        echo'<p><a href="index.php?module=mod_connexion&action=connecter">Connectez-vous pour créer un burger</a></p></br>';
+                    }
+                    echo'
+                    </form>
+                </div>        
+            </div>
+            ';
         }
     }
-    /*<input type="checkbox" name="ingredient" value="pain 1"> pain 1<br>
-            <input type="checkbox" name="ingredient" value="pain 2"> pain 2<br>
-            <input type="checkbox" name="ingredient" value="pain 3"> pain 3<br>
-            <input type="checkbox" name="ingredient" value="pain 4"> pain 4<br>
-            <input type="checkbox" name="ingredient" value="pain 5"> pain 5<br>*/
 ?>

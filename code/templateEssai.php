@@ -16,7 +16,7 @@
             <li class="button_user">
                 <a class="button active" href="index.php?module=mod_connexion&action=connecter">Connexion</a>
                 <a class="button" href="index.php?module=mod_connexion&action=inscription">Inscription</a>
-                <a class="button" href="index.php?module=mod_plat&action=choix_plat">creer plat</a>
+                <a class="button" href="index.php?module=mod_burger&action=creer_burger">creer burger</a>
                 <a class="button" href="index.php?module=mod_plat&action=afficher_menus">choix plat</a>
             </li>
         </header>

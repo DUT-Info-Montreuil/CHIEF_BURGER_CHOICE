@@ -8,33 +8,7 @@ class VuePlat extends VueGenerique1{
 		parent::__construct();
 	}
 
-    public function choix_plat() {
-        echo '<div class="formPlat">
-			<p>Plaaaaaaaaaaaaaaaaaaaaaaaaaaaaat</p>
-				
-			<form action= "index.php?module=mod_plat&action=inserer_plat" method="POST">
-
-				<select name="burger">
-					<option value="">--Choisissez un Burger-- </option>
-					<option value="burger1">burger1</option>
-					<option value="burger2">burger2</option>
-					<option value="burger3">burger3</option>
-				</select></br>
-
-				<select name="boisson">
-					<option value="">--Choisissez une Boisson--</option>
-					<option value="Fanta">Fanta</option>
-					<option value="Coca">Coca</option>
-					<option value="iceTea>">iceTea</option>
-				</select></br>
-
-				<input type="submit" name="inserer"/>
-			</form>
-		</div>';
-    }
-
-
-	public function afficher_menus($ligne,$filtre) {
+	public function afficher_menus($ligne, $filtre) {
 		echo '
 			<div class="yellow_bg">
 				<div class="container">
@@ -51,17 +25,28 @@ class VuePlat extends VueGenerique1{
 			<section class="resip_section">
 
 				<div class="select-filtre">
-					<form action="filtre-categorie" method"POST">';
+					<form action="index.php?module=mod_plat&action=afficher_menus" method="POST">';
 					foreach($filtre as $row) {
 						echo '
 						<label for="">'.$row['nom'].'</label>
-						<input type="checkbox" name= "login">
+						<input type="checkbox" name='.$row['nom'].'>
 						';
 					}
 					echo'<button type="submit" class="btn btn-primary" name="appliquer_filtre">Appliquez vos filtres</button>
+				
 					</form>
-			 	</div>
+			 	</div>';
+				
+				if(empty($ligne)) {
+					echo'
+					<div class="filtre-vide">
+						<p>Aucun burger ne correspond à vos filtres</p>
+						<button><a href="index.php?module=mod_plat&action=afficher_menus">Retourner aux menus</a></button>
+					</div>
 
+					';
+				}
+				echo'
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -70,11 +55,11 @@ class VuePlat extends VueGenerique1{
 									echo'
 										<div class="item">
 											<div class="product_blog_img">
-												<a href="index.php?module=mod_plat&action=affichePlat&idPlat='.$row['id_burger'].'  "><img src='.$row['image'].' alt="#" /></a>
+												<a href="index.php?module=mod_plat&action=pageCommande&idPlat='.$row['id_burger'].'  "><img src='.$row['image'].' alt="#" /></a>
 											</div>
 											<div class="product_blog_cont">
 												<h3>'.$row['nom'].'</h3>
-												<h4><span class="theme_color">$</span>'.$row['prix'].'</h4>
+												<h4>'.$row['prix'].'<span class="theme_color">€</span></h4>
 											</div>
 										</div>';
 								}		
@@ -82,6 +67,7 @@ class VuePlat extends VueGenerique1{
 						</div>
 					</div>
 				</div>
+
 
 			</section>
 
@@ -115,7 +101,7 @@ class VuePlat extends VueGenerique1{
 											</div>
 											<div class="product_blog_cont">
 												<h3>'.$row['nom'].'</h3>
-												<h4><span class="theme_color">$</span>'.$row['prix'].'</h4>
+												<h4>'.$row['prix'].'<span class="theme_color">€</span></h4>
 											</div>
 										</div>';
 								}		
@@ -124,16 +110,6 @@ class VuePlat extends VueGenerique1{
 					</div>
 				</div>
 			</section>';
-	}
-
-	public function affichePlat() {
-		$idPlat = $_GET['idPlat'];
-		echo'<section class="resip_section">
-					<div class="page-commande">
-						<div class="product_blog_img">
-							<img src='.$row['image'].' alt="#" />
-						</div>
-					</div>';
 	}
 }
 

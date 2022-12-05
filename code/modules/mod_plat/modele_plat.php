@@ -49,19 +49,48 @@ class ModelePlat extends Connexion{
 	}
 
 	public function liste_plat() {
+
+		// Récupère tous les burgers, toutes catégories confondues.
 		$requete = self::$bdd->prepare("SELECT * FROM Burger");
-        $requete->execute();
-		$row = $requete->fetchAll();
+		$requete->execute();
+		$burgers = $requete->fetchAll();
 
-		return $row;		
-	}
-
-	public function liste_boisson() {
-		$requete = self::$bdd->prepare("SELECT * FROM Boisson");
-        $requete->execute();
-		$row = $requete->fetchAll();
-
-		return $row;
+		if (isset($_POST['appliquer_filtre'])) {
+			$listeCategorie = $this->liste_categorie();
+			// Récupère tous les burgers qui correspondent aux filtres selectionnés.
+			$burgers = array();
+			$compt = 0;
+			foreach($listeCategorie as $row) {
+				if(isset($_POST[$row['nom']])) {
+					$requete = self::$bdd->prepare("SELECT * FROM definitBurger where id_categorie= ?");
+					$requete->execute([$row['id_categorie']]);
+					$burgerCat = $requete->fetchAll();
+					
+					foreach ($burgerCat as $row) {	
+						$requete = self::$bdd->prepare("SELECT * FROM Burger where id_burger= ?");
+						$requete->execute([$row['id_burger']]);
+						$burgerCat2 = $requete->fetchAll();
+								
+						$burgers = array_merge($burgers,$burgerCat2);
+					}
+					$compt++;
+				}
+			}
+			foreach($burgers as $row) {
+				$nbr = count(array_keys($burgers,$row));
+				if ($nbr != $compt) {
+					unset($burgers[array_search($row, $burgers)]);
+				}
+			}
+		}
+		// Supprime les doublons car un burger peut avoir plusieurs catégories.
+		$burgers2 = array();
+		foreach ($burgers as $row) {
+			if (!in_array($row,$burgers2)) {
+				$burgers2 = array_merge($burgers2,array($row));
+			}	
+		}
+		return $burgers2;		
 	}
 
 	public function liste_categorie() {
@@ -70,6 +99,11 @@ class ModelePlat extends Connexion{
 		$row = $requete->fetchAll();
 
 		return $row;		
+
+	} 
+
+	public function affichePlat() {
+		echo $_GET['idPlat'];
 	}
 }
 ?>

@@ -11,23 +11,12 @@ class ModeleConnexion extends Connexion{
 	}
 
 	public function ajoutUtilisateur() {
-
-        if ($_POST['login'] != null || $_POST['password'] != null || $_POST['mail'] != null) {
-            if ($_POST['password'] == $_POST['confirmPassword']) {
-                $login = $_POST['login'];       
-                $mail = $_POST['mail'];
-                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $login = $_POST['login'];       
+        $mail = $_POST['mail'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 
-                $sth = self::$bdd->prepare('insert into Utilisateur (id_utilisateur,nom,email,password) values (?,?,?,?)');
-                $sth->execute(array(null,$login,$mail,$password));
-                var_dump(array(null,$login,$mail,$password));
-            } else {
-                print "les mots de passe ne sont pas identiques";
-            }
-        } else {
-            print "Veuillez remplir tous les champs";
-        }
-        print "inscrit";
+        $sth = self::$bdd->prepare('insert into Utilisateur (id_utilisateur,nom,email,password) values (?,?,?,?)');
+        $sth->execute(array(null,$login,$mail,$password));
     }
 	
     public function seConnecter() {

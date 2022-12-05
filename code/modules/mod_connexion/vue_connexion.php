@@ -82,7 +82,14 @@ class VueConnexion extends VueGenerique1{
 			<button type="submit" class="btn btn-primary" name="seDeconnecter">NON</button>
 		</div>';
 	}
+
+	public function affichageErreur($message) {
+		echo '
+		<div class="formConnexion">
+			<p>'.$message.'</p>
+		</div>
+		';
+	}
 }
 
 ?>
->>>>>>> feature/boulaye

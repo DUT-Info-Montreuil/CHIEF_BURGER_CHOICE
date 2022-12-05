@@ -1,6 +1,5 @@
 <?php
 include_once "cont_connexion.php";
-
 class ModConnexion {
 	
 	private $action;
@@ -8,14 +7,11 @@ class ModConnexion {
 
 	public function __construct() {
 		$this->controleur = new ContConnexion();	
-		$this->action = isset($_GET['action']) ? $_GET['action'] : "menu";
+		$this->action = isset($_GET['action']) ? $_GET['action'] : "connecter";
 	}
 
 	public function exec() {
 		switch ($this->action) {
-			case "menu":
-		   		$this->controleur->menu();
-		    	break;
 			case "inscription":
                 $this->controleur->form_inscription();
 				break;
