@@ -1023,8 +1023,6 @@
     font-weight: bold;
     margin-left: 800px;
     margin-right: 800px;
-    margin-top: 50px;
-    padding: 20px;
 }
 
 .imageBurger {
@@ -1037,4 +1035,9 @@
 
 .form-creer-burger {
     flex: 1;
+}
+
+#lien-connexion-burger {
+    background-color: #d8b00f;
+    text-align: center;
 }

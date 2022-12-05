@@ -40,7 +40,7 @@
                     if(isset($_SESSION['log'])) {
                         echo'<button type="submit" class="btn btn-primary" name="Valider">Créer votre burger</button>';
                     } else {
-                        echo'<p><a href="index.php?module=mod_connexion&action=connecter">Connectez-vous pour créer un burger</a></p></br>';
+                        echo'<p id="lien-connexion-burger"><a href="index.php?module=mod_connexion&action=connecter">Connectez-vous pour créer un burger</a></p></br>';
                     }
                     echo'
                     </form>
