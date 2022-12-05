@@ -1,4 +1,8 @@
 <?php
+/*Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 session_start();
 
 $module = isset($_GET['module']) ? $_GET['module'] : 'mod_connexion';

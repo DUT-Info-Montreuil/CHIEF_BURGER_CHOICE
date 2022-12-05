@@ -1,4 +1,8 @@
 <?php
+/*Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 include_once "vue_connexion.php";
 include_once "modele_connexion.php";
 
@@ -19,14 +23,7 @@ class ContConnexion {
     }
 
 	public function inscription() {
-        
-		
-		
-		
-		
-		
-		
-		/*if (isset($_POST['inscrire'])) {
+        if (isset($_POST['inscrire'])) {
 			if ($_POST['login'] != null && $_POST['password'] != null && $_POST['mail'] != null && $_POST['confirmPassword'] != null) {
 				if ($_POST['password'] == $_POST['confirmPassword']) {
 					$this->modele->ajoutUtilisateur();
@@ -36,7 +33,7 @@ class ContConnexion {
 			}else {
 				$this->vue->affichageErreur("Veuillez remplir tous les champs");
 			}
-		}*/
+		}
 	}
 
     public function form_connexion() {

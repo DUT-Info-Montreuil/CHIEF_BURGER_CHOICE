@@ -1,4 +1,9 @@
+
 <!DOCTYPE html>
+<!--Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
 <html>
 
 
@@ -56,10 +61,6 @@
                     </li>
                     <li>
                         <a href="index.php?module=mod_burger&action=creer_burger">Créer votre burger</a>
-                    </li>
-                    
-                    <li>
-                        <a href="contact.html">Contactez-nous</a>
                     </li>
                 </ul>
 
@@ -125,12 +126,7 @@
                     </li>
                     <li>
                         <a href="index.php?module=mod_burger&action=creer_burger">Créer votre burger</a>
-                    </li>
-                    
-                    <li>
-                        <a href="contact.html">Contactez-nous</a>
-                    </li>
-                            
+                    </li>                     
                         </ul>
                     </div>
                 </div>

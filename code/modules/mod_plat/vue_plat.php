@@ -1,5 +1,8 @@
 <?php
-
+/*Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 include_once "vue_generique.php";
 
 class VuePlat extends VueGenerique{
@@ -94,16 +97,18 @@ class VuePlat extends VueGenerique{
 						<div class="col-md-12">
 							<div class="owl-carousel owl-theme">';
 							foreach ($ligne as $row) {
-								echo'
-									<div class="item">
-										<div class="product_blog_img">
-											<a href="index.php?module=mod_plat&action=pageCommande&idPlat='.htmlspecialchars($row['id_burger'],ENT_COMPAT).'  "><img src='.htmlspecialchars($row['image'],ENT_COMPAT).' alt="#" /></a>
-										</div>
-										<div class="product_blog_cont">
-											<h3>'.htmlspecialchars($row['nom'],ENT_NOQUOTES).'</h3>
-											<h4>'.htmlspecialchars($row['prix'],ENT_NOQUOTES).'<span class="theme_color">€</span></h4>
-										</div>
-									</div>';
+								if($row['id_utilisateur'] != 2) {
+									echo'
+										<div class="item">
+											<div class="product_blog_img">
+												<a href="index.php?module=mod_plat&action=pageCommande&idPlat='.htmlspecialchars($row['id_burger'],ENT_COMPAT).'  "><img src='.htmlspecialchars($row['image'],ENT_COMPAT).' alt="#" /></a>
+											</div>
+											<div class="product_blog_cont">
+												<h3>'.htmlspecialchars($row['nom'],ENT_NOQUOTES).'</h3>
+												<h4>'.htmlspecialchars($row['prix'],ENT_NOQUOTES).'<span class="theme_color">€</span></h4>
+											</div>
+										</div>';
+								}
 							}			
 							echo '</div>
 						</div>

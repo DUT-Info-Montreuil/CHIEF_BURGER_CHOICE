@@ -1,4 +1,8 @@
 <?php
+/*Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 
 include_once "vue_plat.php";
 include_once "modele_plat.php";
@@ -21,7 +25,6 @@ class ContPlat{
 
 	public function afficher_menus() {
 		$liste = $this->modele->liste_plat();
-
 		$filtre = $this->modele->liste_categorie();
 		$this->vue->afficher_menus($liste,$filtre);
 	}
