@@ -15,10 +15,10 @@ if(isset($_GET['id']) AND !empty($_GET['id']) AND isset($_GET['cle']) AND !empty
             $update_confirme = $bdd->prepare('UPDATE Utilisateur SET confirme = ? WHERE id_utilisateur = ?');
             $update_confirme->execute(array(1, $getid));
             $_SESSION['cle'] = $getcle;
-            header('Location: ../../index.php');
+            header('Location: ../../index.html');
         } else {
             $_SESSION['cle'] = $getcle;
-            header('Location: ../../index.php');
+            header('Location: ../../index.html');
         }
     } else {
         echo'Votre clé est incorrecte';
