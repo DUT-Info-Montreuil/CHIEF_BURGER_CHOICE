@@ -1,6 +1,9 @@
 <?php
+/*Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 include_once "cont_connexion.php";
-
 class ModConnexion {
 	
 	private $action;
@@ -8,12 +11,11 @@ class ModConnexion {
 
 	public function __construct() {
 		$this->controleur = new ContConnexion();	
-		$this->action = isset($_GET['action']) ? $_GET['action'] : "menu";
+		$this->action = isset($_GET['action']) ? $_GET['action'] : "connecter";
 	}
 
 	public function exec() {
 		switch ($this->action) {
-
 			case "inscription":
                 $this->controleur->form_inscription();
 				break;

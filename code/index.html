@@ -1,12 +1,6 @@
-
 <!DOCTYPE html>
-<!--Version 1.0 - 2022/11/30
-GNU GPL Copyleft (C inversé) 2022-2032 
-Initiated by Naoufel,Marwan et Boulaye
-Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
-<html>
 
-
+<html lang="en">
 <head>
     <!-- basic -->
     <meta charset="utf-8">
@@ -16,6 +10,7 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
     <title>CHIEF BURGER CHOICE</title>
+    <link rel="shortcut icon" href="images/logo_page_cbc.png">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,16 +24,17 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- awesome fontfamily -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
-
+<!-- body -->
 
 <body class="main-layout">
-  <!-- loader  -->
- 
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="images/loading.gif" alt="" /></div>
+    </div>
 
     <div class="wrapper">
     <!-- end loader -->
@@ -62,13 +58,13 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
                     <li>
                         <a href="index.php?module=mod_burger&action=creer_burger">Créer votre burger</a>
                     </li>
-                </ul>
+                </ul> 
 
             </nav>
         </div>
 
     <div id="content">
-     <!----------------------------- header -------------------------->
+    <!----------------------------- header -------------------------->
     <header>
         <div class="container-fluid">
             <div class="row">
@@ -97,15 +93,111 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
             </div>
         </div>
     </header>
-	
+    <!----------------------- end header -------------------------->
+    
+    <!-- start slider section -->
+    <div class="slider_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div id="main_slider" class="carousel vert slide" data-ride="carousel" data-interval="5000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="slider_cont">
+                                                <h3>Créez<br>Votre Propre Burger</h3>
+                                                <a class="main_bt_border" href="index.php?module=mod_burger&action=creer_burger">Order Now</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="slider_image full text_align_center">
+                                                <img class="img-responsive" src="images/burger_index.jpeg" alt="#" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="slider_cont">
+                                                <h3>Découvrez les Restaurants<br>Qui Livrent Près De Chez Vous</h3>
+                                                <a class="main_bt_border" href="index.php?module=mod_plat&action=afficher_menus">Order Now</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 full text_align_center">
+                                            <div class="slider_image">
+                                                <img class="img-responsive" src="images/burger_slide.png" alt="#" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                                <i class="fa fa-angle-up"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end slider section -->
 
+    
+<div class="bg_bg">
+<!-- about -->
+<div class="about">
+    <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+             <div class="title">
+                <i><img src="images/title.png" alt="#"/></i>
+                <h2>A propos de notre nourriture</h2>
+                
+             </div>
+          </div>
+       </div>
+       <div class="row">
+         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+             <div class="about_box">
+                 <h3>Le Burger du mois</h3>
+                 <p>Même votre grand oncle aime ce Burger : LE SLIMANI</p>
+                 
+             </div>
+         </div>
+          <div class="col-xl-5 col-lg-5 col-md-10 col-sm-12 about_img_boxpdnt">
+             <div class="about_img">
+                 <figure><img src="images/Le_SLIMANI.jpg" alt="#/"></figure>
+             </div>
+         </div>      
+       </div> 
+    </div>
+</div>
+<!-- end about -->
 
-        <?php							
-            echo $mod->controleur->getVue()->getTampon();
-        ?>
+<!-- blog -->
+<div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      
+    </div>
+  </div>
+</div>
+<!-- end blog -->
 
-
-
+    <!-- footer -->
     <footer>
         <div class="footer">
             <div class="container-fluid">
@@ -118,37 +210,39 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
                     </div>
                     <div class="col-md-12">
                         <ul class="lik">
-                        <li class="active">
-                        <a href="index.html">Acceuil</a>
-                    </li>
-                    <li>
-                        <a href="index.php?module=mod_plat&action=afficher_menus">Menu</a>
-                    </li>
-                    <li>
-                        <a href="index.php?module=mod_burger&action=creer_burger">Créer votre burger</a>
-                    </li>                     
+                            <li class="active">
+                                <a href="index.html">Acceuil</a>
+                            </li>
+                            <li>
+                                <a href="index.php?module=mod_plat&action=afficher_menus">Menu</a>
+                            </li>
+                            <li>
+                                <a href="index.php?module=mod_burger&action=creer_burger">Créer votre burger</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>© 2022 Tous les droits réservé. Conçu par<a href="index.html"> Marwan,Naoufel et Boulaye</a></p>
-                </div>
+                    <p>© 2022 Tous les droits réservé. Conçu par<a href="index.html"> Marwan,Naoufel et Boulaye</a></p>           </div>
             </div>
         </div>
     </footer>
+    <!-- end footer -->
 
+    </div>
+    </div>
+    <div class="overlay"></div>
+    <!-- Javascript files-->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-
-
-
-   <script src="js/jquery-3.0.0.min.js"></script>
+     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+     <script src="js/jquery-3.0.0.min.js"></script>
    <script type="text/javascript">
         $(document).ready(function() {
             $("#sidebar").mCustomScrollbar({
@@ -204,4 +298,5 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
       </script>
 
 </body>
+
 </html>

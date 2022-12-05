@@ -1,4 +1,9 @@
+
 <?php
+/*Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 
 include_once "vue_generique.php";
 
@@ -12,7 +17,7 @@ class VueConnexion extends VueGenerique{
     public function form_inscription() {
 		if(isset($_SESSION['log'])) {
 			echo '<div class="formConnexion">
-				<p>Vous êtes déjà connecté sous : ';echo $_SESSION['log'];echo'</p></br>
+				<p>Vous êtes déjà connecté sous : '.htmlspecialchars($_SESSION['log'], ENT_NOQUOTES).'</p></br>
 				</br>
 				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
 			</div>';
@@ -50,7 +55,7 @@ class VueConnexion extends VueGenerique{
     public function form_connexion() {
 		if(isset($_SESSION['log'])) {
 			echo '<div class="formConnexion">
-				<p>Vous êtes déjà connecté sous : ';echo $_SESSION['log'];echo'</p></br>
+				<p>Vous êtes déjà connecté sous : '.htmlspecialchars($_SESSION['log'], ENT_NOQUOTES).'</p></br>
 				</br>
 				<p><a href="index.php?module=mod_connexion&action=deconnecter">Se déconnecter</a></p></br>
 			</div>';
@@ -80,6 +85,14 @@ class VueConnexion extends VueGenerique{
 			</form>
 			<button type="submit" class="btn btn-primary" name="seDeconnecter">NON</button>
 		</div>';
+	}
+
+	public function affichageErreur($message) {
+		echo '
+		<div class="formConnexion">
+			<p>'.$message.'</p>
+		</div>
+		';
 	}
 }
 

@@ -1,0 +1,28 @@
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
+ @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+ @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+ @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+/*--------------------------------------------------------------------- basic ---------------------------------------------------------------------*/
+ 
+
+p.secret {
+    display: none;
+  }
+
+  /*<FORM ACTION="index.php?module=mod_burger&action=addIngredient" METHOD="POST">
+    
+                <INPUT TYPE="TEXT" NAME="nom_de_mon_burger" value="Nom du burger"> <br><br>
+                    
+                    <p>Merci de choisir vos ingredients:</p><br><br>
+    
+    
+                    <input type="checkbox" name="ingredient[]" value="salade"> salade<br>
+                    <input type="checkbox" name="ingredient[]" value="tomate"> tomate<br>
+                    <input type="checkbox" name="ingredient[]" value="oignion"> oignion<br>
+                    <input type="checkbox" name="ingredient[]" value="cornichons"> cornichons<br>
+                    <input type="checkbox" name="ingredient[]" value="piment"> piment<br><br>
+    
+                    
+                    <INPUT TYPE="SUBMIT" NAME="bouton" value="Valider"> 
+                    </FORM>*/

@@ -1,4 +1,8 @@
 <?php
+/*Version 1.0 - 2022/11/30
+GNU GPL Copyleft (C inversé) 2022-2032 
+Initiated by Naoufel,Marwan et Boulaye
+Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 include_once "vue_connexion.php";
 include_once "modele_connexion.php";
 
@@ -20,7 +24,15 @@ class ContConnexion {
 
 	public function inscription() {
         if (isset($_POST['inscrire'])) {
-			$this->modele->ajoutUtilisateur();
+			if ($_POST['login'] != null && $_POST['password'] != null && $_POST['mail'] != null && $_POST['confirmPassword'] != null) {
+				if ($_POST['password'] == $_POST['confirmPassword']) {
+					$this->modele->ajoutUtilisateur();
+				} else {
+					$this->vue->affichageErreur("Les mots de passe ne sont pas identiques");
+				}
+			}else {
+				$this->vue->affichageErreur("Veuillez remplir tous les champs");
+			}
 		}
 	}
 
@@ -29,9 +41,9 @@ class ContConnexion {
     }
 
 	public function connexion() {
-        if (isset($_POST['seConnecter'])) {
-			$this->modele->seConnecter();
-		}
+		if (isset($_POST['seConnecter'])) {
+				$this->modele->seConnecter();
+		} 
 	}
     
 	public function form_deconnexion() {
