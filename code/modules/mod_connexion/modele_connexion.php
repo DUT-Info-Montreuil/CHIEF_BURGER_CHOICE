@@ -26,14 +26,10 @@ class ModeleConnexion extends Connexion{
 
         if ($utilisateur && password_verify($_POST['password'], $utilisateur['password'])) {
             $_SESSION['log'] = $utilisateur['nom'];
-            echo "connexion";
-        } else {
-            echo "login ou mot de passe incorrect";
         }
     }
     
     public function seDeconnecter() {
-        echo "déconnexion";
         if (isset($_SESSION['log']))  {
             session_unset();
             session_destroy();

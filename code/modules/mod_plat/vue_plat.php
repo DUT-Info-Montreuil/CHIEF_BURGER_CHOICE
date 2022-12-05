@@ -28,8 +28,8 @@ class VuePlat extends VueGenerique1{
 					<form action="index.php?module=mod_plat&action=afficher_menus" method="POST">';
 					foreach($filtre as $row) {
 						echo '
-						<label for="">'.$row['nom'].'</label>
-						<input type="checkbox" name='.$row['nom'].'>
+						<label for="">'.htmlspecialchars($row['nom'],ENT_NOQUOTES).'</label>
+						<input type="checkbox" name='.htmlspecialchars($row['nom'],ENT_COMPAT).'>
 						';
 					}
 					echo'<button type="submit" class="btn btn-primary" name="appliquer_filtre">Appliquez vos filtres</button>
@@ -55,11 +55,11 @@ class VuePlat extends VueGenerique1{
 									echo'
 										<div class="item">
 											<div class="product_blog_img">
-												<a href="index.php?module=mod_plat&action=pageCommande&idPlat='.$row['id_burger'].'  "><img src='.$row['image'].' alt="#" /></a>
+												<a href="index.php?module=mod_plat&action=pageCommande&idPlat='.htmlspecialchars($row['id_burger'],ENT_COMPAT).'  "><img src='.htmlspecialchars($row['image'],ENT_COMPAT).' alt="#" /></a>
 											</div>
 											<div class="product_blog_cont">
-												<h3>'.$row['nom'].'</h3>
-												<h4>'.$row['prix'].'<span class="theme_color">€</span></h4>
+												<h3>'.htmlspecialchars($row['nom'],ENT_NOQUOTES).'</h3>
+												<h4>'.htmlspecialchars($row['prix'],ENT_NOQUOTES).'<span class="theme_color">€</span></h4>
 											</div>
 										</div>';
 								}		
@@ -93,18 +93,18 @@ class VuePlat extends VueGenerique1{
 						
 						<div class="col-md-12">
 							<div class="owl-carousel owl-theme">';
-								foreach ($ligne as $row) {
-									echo'
-										<div class="item">
-											<div class="product_blog_img">
-												<img src='.$row['image'].' alt="#" />
-											</div>
-											<div class="product_blog_cont">
-												<h3>'.$row['nom'].'</h3>
-												<h4>'.$row['prix'].'<span class="theme_color">€</span></h4>
-											</div>
-										</div>';
-								}		
+							foreach ($ligne as $row) {
+								echo'
+									<div class="item">
+										<div class="product_blog_img">
+											<a href="index.php?module=mod_plat&action=pageCommande&idPlat='.htmlspecialchars($row['id_burger'],ENT_COMPAT).'  "><img src='.htmlspecialchars($row['image'],ENT_COMPAT).' alt="#" /></a>
+										</div>
+										<div class="product_blog_cont">
+											<h3>'.htmlspecialchars($row['nom'],ENT_NOQUOTES).'</h3>
+											<h4>'.htmlspecialchars($row['prix'],ENT_NOQUOTES).'<span class="theme_color">€</span></h4>
+										</div>
+									</div>';
+							}			
 							echo '</div>
 						</div>
 					</div>

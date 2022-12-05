@@ -28,11 +28,11 @@
                         echo'
                         <div class="form-creer">
                             <div class="form-creer-burger">
-                                <label for="">'.$row['nom'].'</label>
-                                <input type="checkbox" name='.$row['id_ingredient'].'>
+                                <label for="">'.htmlspecialchars($row['nom'], ENT_NOQUOTES).'</label>
+                                <input type="checkbox" name='.htmlspecialchars($row['id_ingredient'], ENT_COMPAT).'>
                             </div>
                             <div class="form-creer-burger">
-                                <h4><span class="theme_color">'.$row['prix'].'€</span></h4>
+                                <h4><span class="theme_color">'.htmlspecialchars($row['prix'], ENT_NOQUOTES).'€</span></h4>
                             </div>
                         </div>
                         ';

@@ -18,7 +18,7 @@ class ModelePlat extends Connexion{
 		$requete1 = self::$bdd->prepare("SELECT * FROM Boisson WHERE nom = ?");
         $requete1->execute([$_POST['boisson']]);
 
-	$requete1->execute("Fanta"/*[$_POST['boisson']]*/);
+		$requete1->execute("Fanta"/*[$_POST['boisson']]*/);
         $boisson = $requete1->fetch();
 	
 		$prix = $burger['prix'] + $boisson['prix'];
@@ -76,6 +76,7 @@ class ModelePlat extends Connexion{
 					$compt++;
 				}
 			}
+			//Assure que le burger répond à tous les filtres selectionnés.
 			foreach($burgers as $row) {
 				$nbr = count(array_keys($burgers,$row));
 				if ($nbr != $compt) {
