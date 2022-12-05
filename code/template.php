@@ -133,7 +133,7 @@
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>© 2022 All Rights Reserved. Design by<a href="https://html.design/"> Marwan,Naoufel et Boulaye</a></p>
+                    <p>© 2022 All Rights Reserved. Design by Marwan, Naoufel and Boulaye</a></p>
                 </div>
             </div>
         </div>

@@ -10,15 +10,13 @@ class ModelePlat extends Connexion{
 	}
 
 	public function inserer_plat() {           
-		$requete = self::$bdd->prepare("SELECT * FROM Burger WHERE nom = ?");
-        $requete->execute([$_POST['burger']]);
+		$requete = self::$bdd->prepare("SELECT * FROM Burger WHERE id_burger = ?");
+        $requete->execute([$_GET['idPlat']]);
         $burger = $requete->fetch();
 
 
 		$requete1 = self::$bdd->prepare("SELECT * FROM Boisson WHERE nom = ?");
         $requete1->execute([$_POST['boisson']]);
-
-	$requete1->execute("Fanta"/*[$_POST['boisson']]*/);
         $boisson = $requete1->fetch();
 	
 		$prix = $burger['prix'] + $boisson['prix'];
@@ -27,12 +25,11 @@ class ModelePlat extends Connexion{
 		$idBoisson = $boisson['id_boisson'];
 
 		
-
 		$idCommande = $this->commande();
 
 
 
-		$sth1 = self::$bdd->prepare('insert into Menu (id_menu,nom,prix,id_boisson,id_commande,id_burger) values (?,?,?,?,?,?)');
+		$sth1 = self::$bdd->prepare('INSERT INTO Menu (id_menu,nom,prix,id_boisson,id_commande,id_burger) values (?,?,?,?,?,?)');
 		$sth1->execute(array(null,$burger['nom'],$prix,$idBoisson,$idCommande,$idBurger));
         print "Menu commandé";
     } 
@@ -42,7 +39,7 @@ class ModelePlat extends Connexion{
         $requete2->execute([$_SESSION['log']]);
         $auteur = $requete2->fetch();
 
-		$sth = self::$bdd->prepare('insert into Commande (id_utilisateur) values (?)');
+		$sth = self::$bdd->prepare('INSERT INTO Commande (id_utilisateur) values (?)');
 		$sth->execute(array($auteur['id_utilisateur']));
 
 		return self::$bdd->LastInsertId();
@@ -56,14 +53,27 @@ class ModelePlat extends Connexion{
 		return $row;		
 	}
 
-	public function liste_ingredients_d_un_burger($ingrdient_recherche)/*va chercher les noms d'ingredients du burger ayant l'id passé en parametre*/{
+
+	public function liste_ingredients_d_un_burger($ingrdient_recherche){
 		$requete = self::$bdd->prepare("SELECT Ingredient.nom FROM Ingredient INNER JOIN compose ON Ingredient.id_ingredient=compose.id_ingredient 
-										INNER JOIN Burger ON compose.id_burger = Burger.id_burger WHERE Burger.id_burger = ?");
-        $requete->execute(array($ingrdient_recherche));
+										INNER JOIN Burger ON compose.id_burger = Burger.id_burger WHERE Burger.id_burger = '$ingrdient_recherche'");
+        $requete->execute();
 		$row = $requete->fetchAll();
 		return $row;
-		}
 
+	}
+
+	public function liste_boissons(){
+
+		$requete = self::$bdd->prepare("SELECT * FROM Boisson");
+        $requete->execute();
+		$row = $requete->fetchAll();
+
+		return $row;	
+	}
+
+
+	
 
 }
 ?>

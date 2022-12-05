@@ -32,8 +32,14 @@ class ContPlat{
 		$row = $this->modele->liste_plat();
 		$row2 = $this->modele->liste_ingredients_d_un_burger($_GET['idPlat']);
 		$this->vue->afficher_page_burger($row,$row2);
+
 	}
 
+	public function afficher_form_boissons() {
+		$row = $this->modele->liste_boissons();
+		$this->vue->choix_boisson($row);
+	
+	}	
 
 	
 
@@ -45,11 +51,7 @@ class ContPlat{
 
 
 	
-	public function commande_plat() {
-		if (isset($_POST['commande'])) {
-			$this->modele->inserer_plat();
-		}
-	}
+	
 	
 }
 

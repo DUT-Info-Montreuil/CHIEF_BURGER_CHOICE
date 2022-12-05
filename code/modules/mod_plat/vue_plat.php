@@ -8,29 +8,29 @@ class VuePlat extends VueGenerique1{
 		parent::__construct();
 	}
 
-    public function choix_plat() {
+    public function choix_boisson($liste_boissons) {
 
         echo '<div class="formPlat">
 			<p>Plaaaaaaaaaaaaaaaaaaaaaaaaaaaaat</p>
 				
-			<form action= "index.php?module=mod_plat&action=inserer_plat" method="POST">
+			<form action= "index.php?module=mod_plat&action=inserer_plat" method="POST">';
 
-				<select name="burger">
-					<option value="">--Choisissez un Burger-- </option>
-					<option value="burger1">burger1</option>
-					<option value="burger2">burger2</option>
-					<option value="burger3">burger3</option>
-				</select></br>
+			foreach($liste_boissons as $row) {
+				echo'
+				<div class="form-creer">
+					<div class="form-creer-burger">
+						<label for="">'.htmlspecialchars($row['nom'], ENT_NOQUOTES).'</label>
+						<input type="checkbox" name='.htmlspecialchars($row['nom'], ENT_COMPAT).'>
+					</div>
+					<div class="form-creer-burger">
+						<h4><span class="theme_color">'.htmlspecialchars($row['prix'], ENT_NOQUOTES).'€</span></h4>
+					</div>
+				</div>';
+				 
 
-				<select name="boisson">
-					<option value="">--Choisissez une Boisson--</option>
-					<option value="Fanta">Fanta</option>
-					<option value="Coca">Coca</option>
-					<option value="iceTea>">iceTea</option>
-				</select></br>
-
-				<input type="submit" name="inserer"/>
-			</form>
+			}
+			echo'<INPUT TYPE="SUBMIT" NAME="inserer" value="Valider">';
+			echo'</form>
 		</div>';
     }
 
@@ -131,46 +131,12 @@ class VuePlat extends VueGenerique1{
 		
 			';
 
-			?>
 			
-		   <script type="text/javascript">
-				$(document).ready(function() {
-					$("#sidebar").mCustomScrollbar({
-						theme: "minimal"
-					});
-		
-					$('#dismiss, .overlay').on('click', function() {
-						$('#sidebar').removeClass('active');
-						$('.overlay').removeClass('active');
-					});
-		
-					$('#sidebarCollapse').on('click', function() {
-						$('#sidebar').addClass('active');
-						$('.overlay').addClass('active');
-						$('.collapse.in').toggleClass('in');
-						$('a[aria-expanded=true]').attr('aria-expanded', 'false');
-					});
-				});
-			</script>
-			<?php
 	}
 
-	public function afficher_page_burger($ligne, $ligne_ingr){
+	public function afficher_page_burger($ligne, $ligne_ingredient){
 
-		/*
-		Aller chercher dans la BDD le burger ou ID=$_GET['id_Plat]
-		
-		afficher :
-		-nom
-		-prix
-		-categorie
-		-liste de ses infrgedients
-		-bouton like
-		-avis (commentaires)
-		 
-		
-		
-		*/
+	
 
 		foreach($ligne as $row){
 			if($row['id_burger'] == $_GET['idPlat']){
@@ -189,13 +155,13 @@ class VuePlat extends VueGenerique1{
 					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 						<div class="about_box">
 							<h3>'; echo $row['nom'] ; echo'</h3>
-							<p>'; echo $row['prix'] ; echo'€</p></br>';
-							foreach($ligne_ingr as $row2){
-								
-									echo '<p> ';echo $row2['nom'] ;'</p>';
-								
+
+							<p>'; echo $row['prix'] ; echo'$</p></br>
+							<p>';
+							foreach($ligne_ingredient as $row2){
+								echo'<p>'; echo $row2['nom']; echo'</p>';
 							}
-							echo'
+							echo'</p></br>
 							
 						</div>
 					</div>
@@ -203,8 +169,14 @@ class VuePlat extends VueGenerique1{
 						<div class="about_img">
 							<figure><img src=';echo $row['image'];echo' alt="#" /></figure>
 						</div>
-					</div>      
-				</div> 
+					</div>
+					<div class="col-md-5">
+						<div class="slider_cont">
+						<a class="main_bt_border" href="index.php?module=mod_plat&action=finaliser_commande&idPlat='.$row['id_burger'].'">Commander</a>
+						</div>
+					</div>				
+					
+					</div> 
 				</div>
 			</div>
 			<!-- end about -->';

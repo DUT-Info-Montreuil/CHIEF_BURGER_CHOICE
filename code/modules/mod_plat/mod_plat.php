@@ -31,6 +31,9 @@ class ModPlat {
 			case "afficherPlat":
 				$this->controleur->afficher_burger();
 				break;
+
+			case "finaliser_commande":
+				$this->controleur->afficher_form_boissons();
 		}
 		$tamp = $this->controleur->getVue()->getAffichage();	
 		$this->controleur->getVue()->setTampon($tamp);		
