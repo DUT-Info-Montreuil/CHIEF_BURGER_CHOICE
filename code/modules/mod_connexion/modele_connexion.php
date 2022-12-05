@@ -17,10 +17,10 @@ class ModeleConnexion extends Connexion{
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $cle = rand(100000, 300000);
                 
-            $sth = self::$bdd->prepare('INSERT INTO utilisateur (nom, email, mdp, cle, confirme) VALUES (?, ?, ?, ?, ?)');
+            $sth = self::$bdd->prepare('INSERT INTO Utilisateur (nom, email, mdp, cle, confirme) VALUES (?, ?, ?, ?, ?)');
             $sth->execute(array($login,$mail,$password, $cle, 0));
 
-            $recup_user =self::$bdd->prepare('SELECT * FROM utilisateur WHERE email=?');
+            $recup_user =self::$bdd->prepare('SELECT * FROM Utilisateur WHERE email=?');
             $recup_user->execute(array($mail));
             if($recup_user->rowCount()>0){
                 $user_infos = $recup_user->fetch();
@@ -49,7 +49,7 @@ class ModeleConnexion extends Connexion{
     public function seConnecter() {
         if(!empty($_POST['login']) && !empty($_POST['password'])){
 
-            $requete = self::$bdd->prepare("SELECT * FROM utilisateur WHERE nom = ?");
+            $requete = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE nom = ?");
             $requete->execute([$_POST['login']]);
 
             if($requete->rowCount() > 0){
