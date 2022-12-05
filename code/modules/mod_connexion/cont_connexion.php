@@ -13,6 +13,7 @@ class ContConnexion {
 		$this->modele = new ModeleConnexion;
 	}
 
+
     public function form_inscription() {
         $this->vue->form_inscription();
     }

@@ -1,6 +1,6 @@
 <?php
 
-class VueGenerique1{
+class VueGenerique{
 
     protected $tampon;
 
