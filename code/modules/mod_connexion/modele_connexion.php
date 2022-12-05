@@ -45,7 +45,7 @@ class ModeleConnexion extends Connexion{
     public function seConnecter() {
         if(!empty($_POST['login']) && !empty($_POST['password'])){
 
-            $requete = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE nom = ?");
+            $requete = self::$bdd->prepare("SELECT * FROM utilisateur WHERE nom = ?");
             $requete->execute([$_POST['login']]);
 
             if($requete->rowCount() > 0){
