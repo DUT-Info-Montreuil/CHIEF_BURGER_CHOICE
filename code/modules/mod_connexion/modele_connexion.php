@@ -1,3 +1,4 @@
+
 <?php
 include_once "Connexion.php";
 
@@ -7,9 +8,6 @@ class ModeleConnexion extends Connexion{
 		self::initConnexion();
 	}
 	public function ajoutUtilisateur() {
-    if(!empty($_POST['login']) && !empty($_POST['mail']) && !empty($_POST['password'])){
-        if ($_POST['password'] == $_POST['confirmPassword']) {
-
             $login = $_POST['login'];       
             $mail = $_POST['mail'];
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -74,7 +72,6 @@ class ModeleConnexion extends Connexion{
     }
     
     public function seDeconnecter() {
-        echo "déconnexion";
         if (isset($_SESSION['log']))  {
             session_unset();
             session_destroy();
