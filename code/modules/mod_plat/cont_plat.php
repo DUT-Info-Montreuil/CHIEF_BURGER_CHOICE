@@ -30,7 +30,12 @@ class ContPlat{
 
 	public function afficher_burger() {
 		$row = $this->modele->liste_plat();
-		$this->vue->afficher_page_burger($row);
+		$row2 = $this->modele->liste_ingredients_d_un_burger($_GET['idPlat']);
+		$this->vue->afficher_page_burger($row,$row2);
+	}
+
+	public function finaliser_commande(){
+
 	}
 
 	public function getVue() {

@@ -391,16 +391,18 @@
      top: 52%;
 }
  .main_bt_border {
-     color: #fff;
-     font-size: 18px;
-     font-weight: 300;
+     color: #e3d105;
+     font-size: 20px;
+     font-weight: 300px;
      min-width: 150px;
-     border: solid #fff 1px;
+     border-color: #e3d105 ;
+     border: 12px;
      float: left;
      text-align: center;
      min-height: 50px;
      line-height: 50px;
      margin-top: 20px;
+     background-color: black;
 }
  .main_bt_border:hover, .main_bt_border:focus {
      background: #e3d105;

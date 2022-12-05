@@ -102,8 +102,8 @@
 
 
         <?php	
-            //include_once '/home/etudiants/info/mghrairi/local_html/CBC/CHIEF_BURGER_CHOICE/code/modules/mod_burger/modele_burger.php';
-            include_once 'C:\wamp64\www\CBC_home\CHIEF_BURGER_CHOICE-1\code\modules\mod_burger\modele_burger.php';						
+            include_once '/home/etudiants/info/mghrairi/local_html/CBC/CHIEF_BURGER_CHOICE/code/modules/mod_burger/modele_burger.php';
+            //include_once 'C:\wamp64\www\CBC_home\CHIEF_BURGER_CHOICE-1\code\modules\mod_burger\modele_burger.php';						
             echo $mod->controleur->getVue()->getTampon();
         
         ?>
@@ -133,7 +133,7 @@
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>© 2022 All Rights Reserved. Design by<a href="https://html.design/"> Marwan,Naoufel et Boulaye</a></p>
+                    <p>© 2022 All Rights Reserved. Design by Marwan, Naoufel and Boulaye</a></p>
                 </div>
             </div>
         </div>

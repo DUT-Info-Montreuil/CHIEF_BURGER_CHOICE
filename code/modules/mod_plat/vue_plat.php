@@ -131,31 +131,10 @@ class VuePlat extends VueGenerique1{
 		
 			';
 
-			?>
 			
-		   <script type="text/javascript">
-				$(document).ready(function() {
-					$("#sidebar").mCustomScrollbar({
-						theme: "minimal"
-					});
-		
-					$('#dismiss, .overlay').on('click', function() {
-						$('#sidebar').removeClass('active');
-						$('.overlay').removeClass('active');
-					});
-		
-					$('#sidebarCollapse').on('click', function() {
-						$('#sidebar').addClass('active');
-						$('.overlay').addClass('active');
-						$('.collapse.in').toggleClass('in');
-						$('a[aria-expanded=true]').attr('aria-expanded', 'false');
-					});
-				});
-			</script>
-			<?php
 	}
 
-	public function afficher_page_burger($ligne/*, $ligne_ingredient*/){
+	public function afficher_page_burger($ligne, $ligne_ingredient){
 
 		/*
 		Aller chercher dans la BDD le burger ou ID=$_GET['id_Plat]
@@ -191,11 +170,9 @@ class VuePlat extends VueGenerique1{
 							<h3>'; echo $row['nom'] ; echo'</h3>
 							<p>'; echo $row['prix'] ; echo'$</p></br>
 							<p>';
-							/*foreach($ligne_ingr as $row){
-								if($row['id_burger'] == $_GET['idPlat']){
-									
-								}
-							}*/
+							foreach($ligne_ingredient as $row2){
+								echo'<p>'; echo $row2['nom']; echo'</p>';
+							}
 							echo'</p></br>
 							
 						</div>
@@ -204,8 +181,14 @@ class VuePlat extends VueGenerique1{
 						<div class="about_img">
 							<figure><img src=';echo $row['image'];echo' alt="#" /></figure>
 						</div>
-					</div>      
-				</div> 
+					</div>
+					<div class="col-md-5">
+						<div class="slider_cont">
+						<a class="main_bt_border" href="index.php?module=mod_plat&action=finaliser_commande">Commander</a>
+						</div>
+					</div>				
+					
+					</div> 
 				</div>
 			</div>
 			<!-- end about -->';
