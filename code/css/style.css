@@ -1012,11 +1012,22 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
 .select-filtre {
     background-color: #d8b00f;
     color: #000000;
-    width: 100%;
-    /*margin-top: 0px;
+    text-align: center;
+    margin-left: 50px;
+    content: "";
+    display: table;
+    clear: both;
+    /*width: 100%;
+    margin-top: 0px;
     margin-left: 50px;
     margin-right: 1600px;*/
+}
 
+.visu-filtre {
+    background-color: #d8b00f;
+    font-size: 20px;
+    float: left;
+    padding: 0 100px;
 }
 
 .filtre-vide {
@@ -1045,3 +1056,5 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html>*/
     background-color: #d8b00f;
     text-align: center;
 }
+
+

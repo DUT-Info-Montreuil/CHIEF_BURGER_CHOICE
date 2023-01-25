@@ -26,16 +26,22 @@ class VuePlat extends VueGenerique{
 			</div>
 			<!-- section -->
 			<section class="resip_section">
-
 				<div class="select-filtre">
 					<form action="index.php?module=mod_plat&action=afficher_menus" method="POST">';
 					foreach($filtre as $row) {
+						$nom = $row['nom'];
 						echo '
-						<label for="">'.htmlspecialchars($row['nom'],ENT_NOQUOTES).'</label>
-						<input type="checkbox" name='.htmlspecialchars($row['nom'],ENT_COMPAT).'>
+						<div class="visu-filtre">
+							<label for="">'.htmlspecialchars($nom,ENT_NOQUOTES).'</label>
+							<input type="checkbox" name='.htmlspecialchars($nom,ENT_COMPAT).'>
+						</div>
 						';
 					}
-					echo'<button type="submit" class="btn btn-primary" name="appliquer_filtre">Appliquez vos filtres</button>
+
+					echo'
+					</br>
+					</br>
+					<button type="submit" class="btn btn-primary" name="appliquer_filtre">Appliquez vos filtres</button>
 				
 					</form>
 			 	</div>';
@@ -46,7 +52,6 @@ class VuePlat extends VueGenerique{
 						<p>Aucun burger ne correspond à vos filtres</p>
 						<button><a href="index.php?module=mod_plat&action=afficher_menus">Retourner aux menus</a></button>
 					</div>
-
 					';
 				}
 				echo'
