@@ -81,7 +81,7 @@ Web Site = <http://localhost/CHIEF_BURGER_CHOICE/code/index.html> -->
                     <div class="full">
                         <div class="right_header_info">
                             <ul>
-                                <li class="dinone">Contactez-nous : <img style="margin-right: 15px;margin-left: 15px;" src="images/phone_icon.png" alt="#"><a href="#">0606060606</a></li>
+                                <li class="dinone">Contactez-nous : <img style="margin-right: 15px;margin-left: 15px;" src="images/phone_icon.png" alt="#"><a href="#">0664864407</a></li>
                                 <li class="dinone"><img style="margin-right: 15px;" src="images/mail_icon.png" alt="#"><a href="#">ChiefBurgerChoice@gmail.com</a></li>
                                 <li class="dinone"><img style="margin-right: 15px;height: 21px;position: relative;top: -2px;" src="images/location_icon.png" alt="#"><a href="https://www.google.com/maps/place/93100+Montreuil/@48.8636964,2.4489921,14z/data=!3m1!4b1!4m5!3m4!1s0x47e66d502c5a0bfb:0x1c0b82c6e1d882d0!8m2!3d48.863819!4d2.4484629">93100 Montreuil, France</a></li>
                                 <li class="button_user"><a class="button active" href="index.php?module=mod_connexion&action=connecter">Connexion</a><a class="button" href="index.php?module=mod_connexion&action=inscription">Inscription</a></li>
